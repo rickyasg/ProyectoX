@@ -1,0 +1,32 @@
+page-squash-list {
+    ion-grid{
+        button{
+        ion-row{
+            font-size: 1.2vw;
+            text-align: center;
+        }
+        
+    }
+
+}
+.list-header{
+    background-color: black;
+    color:white;
+    height: 20px;
+    text-align: center;
+}
+.left {
+    text-align: left;
+}
+.rigth {
+    text-align: right;
+}
+ion-title {
+    text-transform: uppercase;
+  }
+
+  label {
+    color: blue;
+  }
+
+}

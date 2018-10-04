@@ -1,0 +1,52 @@
+
+<div class="ui-g">
+  <div class="ui-g-12">
+    <div class="card card-w-title">
+  <h1>Listado de Denuncias</h1>
+  <div class="ui-g">
+    <div class="ui-g-4"></div>
+    <div class="ui-g-4" style="text-align:center"> <p-calendar [(ngModel)]="date1" [showIcon]="true"></p-calendar></div>
+    <div class="ui-g-4"></div>
+  </div>
+      <div class="ui-widget-header" style="padding:4px 8px;border-bottom: 0 none;text-align:right;background-color:#424242">                
+              <div class="row ui-toolbar-group-left">
+                  <button pButton type="button" icon="ui-icon-plus" class="green-btn" (click)="addDenuncias()"></button> 
+                  <button pButton type="button" icon="ui-icon-delete" class="teal-btn" (click)="confirmDelete()" *ngIf="hideElement"></button>
+                  <button pButton type="button" icon="ui-icon-edit" class="teal-btn" (click)="showDialog(this.type.Actualizar)" *ngIf="hideElement" ></button>    
+  
+              </div>        
+                  <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
+                      <input #gb type="text" pInputText size="25" style = "color:white" placeholder="Buscar">
+      </div>
+  
+      <p-dataTable [value]="_listado" [responsive]="true" selectionMode="single"  
+      [(selection)]="Usuario" [rows]="10" [paginator]="true"  [globalFilter]="gb">
+      <!-- (onRowUnselect)="onRowUnselect($event)"
+      (onRowDblclick)="handleRowDblclickUsuario($event)"  -->
+                  <p-column field="NroDenuncia" header="Nro. Denuncia" size="40"></p-column>
+                  <p-column field="FiscalCase" header="Nro. Caso" size="40"></p-column>
+                  <p-column field="TipoDenuncia" header="Tipo de Denuncia" size="40"></p-column>
+                  <p-column field="Division" header="División" size="40"></p-column>
+                  <p-column field="Denunciante" header="Denunciante" size="40"></p-column>
+                  <p-column field="FechaHecho" header="Fecha Hecho" size="8">
+                      <ng-template let-col let-fecha="rowData" pTemplate="body">
+                          {{fecha[col.field] | date:'shortDate'}}
+                      </ng-template>
+                  </p-column>
+                  <p-column field="FechaRegistro" header="Fecha Registro" size="8">
+                        <ng-template let-col let-fecha="rowData" pTemplate="body">
+                            {{fecha[col.field] | date:'shortDate'}}
+                        </ng-template>
+                    </p-column>
+
+                  <p-column field="estado" header="Estado" size="3">
+                      <!-- <ng-template let-col let-estado="rowData" pTemplate="body">
+                          <div class="circulo" [style.background]="estado[col.field]===false?'Red':'Green'"></div>
+                      </ng-template> -->
+                  </p-column>
+       </p-dataTable>
+     </div>
+  </div>
+  </div>
+
+  

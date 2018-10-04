@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio -->
+<jasperTemplate xmlns="http://jasperreports.sourceforge.net/jasperreports/template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/template http://jasperreports.sourceforge.net/xsd/jaspertemplate.xsd">
+	<style name="Text6" scaleImage="RealSize" hTextAlign="Center" vTextAlign="Middle" vImageAlign="Middle" isBlankWhenNull="false" fontName="Verdana" fontSize="6"/>
+	<style name="DataTimeFormat" fill="Solid" scaleImage="RealSize" hTextAlign="Center" vTextAlign="Middle" vImageAlign="Middle" pattern="MMM d, yyyy h:mm:ss a" isBlankWhenNull="true" fontName="Verdana" fontSize="6"/>
+	<style name="Title11" hTextAlign="Left" vTextAlign="Middle" vImageAlign="Middle" isBlankWhenNull="true" fontName="Verdana" fontSize="14" isBold="true"/>
+	<style name="Text9" scaleImage="RealSize" hTextAlign="Left" vTextAlign="Middle" vImageAlign="Middle" isBlankWhenNull="true" fontName="Verdana" fontSize="9" isBold="false"/>
+	<style name="Text10" isDefault="true" hTextAlign="Left" vTextAlign="Middle" pattern="" isBlankWhenNull="true" fontName="Verdana" fontSize="10" isBold="false"/>
+</jasperTemplate>

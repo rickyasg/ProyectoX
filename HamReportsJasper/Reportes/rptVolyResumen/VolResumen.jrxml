@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.0.final using JasperReports Library version 6.4.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="VolResumen" pageWidth="612" pageHeight="792" columnWidth="536" leftMargin="56" rightMargin="20" topMargin="20" bottomMargin="20" whenResourceMissingType="Error" uuid="d28c8008-121f-402a-a886-2a39e78dace2">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.unit." value="cm"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SQLDeportes"/>
+	<property name="ireport.jasperserver.url" value="http://pluris2017.mindeportes.gob.bo:8080/jasperserver/"/>
+	<property name="ireport.jasperserver.user" value="jasperadmin"/>
+	<property name="ireport.jasperserver.reportUnit" value="/Reports/Hammer/rptResumen6"/>
+	<property name="ireport.jasperserver.report.resource" value="/Reports/Hammer/rptResumen6_files/main_jrxml"/>
+	<template><![CDATA["Resources/Styles/style_basic.jrtx"]]></template>
+	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#7A7A7A" fontName="VerdanaReports" fontSize="11" isBold="true">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineStyle="Dotted" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineStyle="Dotted" lineColor="#000000"/>
+			<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineStyle="Dotted" lineColor="#000000"/>
+			<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="dsResultadosSet" uuid="682c5b4a-1fb9-43e6-bb4a-403f0020a094">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SQLDeportes"/>
+		<parameter name="CronogramaId" class="java.lang.String"/>
+		<queryString language="SQL">
+			<![CDATA[select * from conj.fGetResultadosVoley( $P{CronogramaId} )]]>
+		</queryString>
+		<field name="CompetidorId" class="java.lang.Integer"/>
+		<field name="Equipo" class="java.lang.String"/>
+		<field name="Sets" class="java.lang.Double"/>
+		<field name="1S" class="java.lang.Integer"/>
+		<field name="2S" class="java.lang.Integer"/>
+		<field name="3S" class="java.lang.Integer"/>
+		<field name="4S" class="java.lang.Integer"/>
+		<field name="5S" class="java.lang.Integer"/>
+		<field name="Total" class="java.lang.Integer"/>
+	</subDataset>
+	<parameter name="EventoId" class="java.lang.String">
+		<defaultValueExpression><![CDATA["1"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="ReporteId" class="java.lang.String">
+		<defaultValueExpression><![CDATA["2"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="CronogramaId" class="java.lang.String">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+		<defaultValueExpression><![CDATA["1"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="NombreSistema" class="java.lang.String">
+		<defaultValueExpression><![CDATA["Resultado provistos por Hammer"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="UrlImages" class="java.lang.String">
+		<defaultValueExpression><![CDATA["C:/HammerResources/Images/Logos"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[EXEC  [rpt].[pGetResumenConjunto] @CronogramaId =  $P{CronogramaId}]]>
+	</queryString>
+	<field name="CronogramaId" class="java.lang.Integer"/>
+	<field name="Fecha" class="java.sql.Date"/>
+	<field name="CompetidorIdA" class="java.lang.Integer"/>
+	<field name="EquipoA" class="java.lang.String"/>
+	<field name="RepresentacionA" class="java.lang.String"/>
+	<field name="MarcaA" class="java.lang.Double"/>
+	<field name="EsGanadorA" class="java.lang.Integer"/>
+	<field name="CompetidorIdB" class="java.lang.Integer"/>
+	<field name="EquipoB" class="java.lang.String"/>
+	<field name="RepresentacionB" class="java.lang.String"/>
+	<field name="MarcaB" class="java.lang.Integer"/>
+	<field name="EsGanadorB" class="java.lang.Integer"/>
+	<group name="Group2"/>
+	<pageHeader>
+		<band height="73" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="cm"/>
+			<subreport isUsingCache="false" runToBottom="false">
+				<reportElement x="0" y="-1" width="536" height="73" uuid="d89243a0-b81c-45f9-b49c-43b041461f48"/>
+				<subreportParameter name="EventoId">
+					<subreportParameterExpression><![CDATA[$P{EventoId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="CronogramaId">
+					<subreportParameterExpression><![CDATA[$P{CronogramaId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="ReporteId">
+					<subreportParameterExpression><![CDATA[$P{ReporteId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="UrlImages">
+					<subreportParameterExpression><![CDATA[$P{UrlImages}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["Resources/Template/Header.jrxml"]]></subreportExpression>
+			</subreport>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="51">
+			<textField>
+				<reportElement style="Title11" x="127" y="0" width="128" height="16" uuid="773efe2a-272c-48ef-9a04-9cffb2b5d94a"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{EquipoA}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Title11" x="255" y="5" width="25" height="40" uuid="c9457647-c2fb-45c2-82a3-060c43ff28ee"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Vs.]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Text6" x="127" y="16" width="128" height="10" uuid="51d01a5c-3302-48dc-a1e2-05371d22a0a6"/>
+				<textFieldExpression><![CDATA[$F{RepresentacionA}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="Text6" x="280" y="16" width="158" height="10" uuid="f2714722-dd10-4f4a-bdeb-62e4427ad870"/>
+				<textFieldExpression><![CDATA[$F{RepresentacionB}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.###;(#,##0.###-)">
+				<reportElement key="" style="Title11" x="155" y="26" width="100" height="25" uuid="3e7d6342-f975-480b-a0df-410f2c9b7bd0"/>
+				<textElement textAlignment="Center">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{MarcaA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Title11" x="280" y="0" width="158" height="16" uuid="f088a0b0-0951-4e58-9301-a87c804ad6f5"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{EquipoB}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,###.###;(#,###.###-)">
+				<reportElement key="" style="Title11" x="280" y="26" width="100" height="25" uuid="8b3ac6a0-07d6-425f-b4cf-563ff0903958"/>
+				<textElement textAlignment="Center">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{MarcaB}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="80">
+			<componentElement>
+				<reportElement x="60" y="20" width="370" height="60" uuid="bade1da4-fd43-42fb-af97-3912a10a3c52">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="dsResultadosSet" uuid="0e030390-d729-4791-b610-306333800c8c">
+						<datasetParameter name="CronogramaId">
+							<datasetParameterExpression><![CDATA[$P{CronogramaId}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="80" uuid="87f87972-4920-46ad-ac77-dfe68345a15a">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="80" height="30" forecolor="#FFFFFF" uuid="7da83330-c700-4c85-99f5-04be8992c8b5"/>
+								<textElement textAlignment="Center">
+									<font fontName="VerdanaReports" size="9" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Equipo]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="80" height="30" uuid="ba9735b8-6829-4118-97bc-f84ec6de530f"/>
+								<textElement>
+									<font fontName="VerdanaReports" size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{Equipo}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="40" uuid="4c58d26c-df1d-4bb8-b95d-ff65b5957b74">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="40" height="30" forecolor="#FFFFFF" uuid="f82daf76-c05f-412a-bf2c-068b77ad8099"/>
+								<textElement textAlignment="Center">
+									<font fontName="VerdanaReports" size="9" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Set]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+							<textField pattern="#,##0.###;(#,##0.###-)">
+								<reportElement x="0" y="0" width="40" height="30" uuid="4298195e-5763-45ad-b5f7-99f35093009a"/>
+								<textElement textAlignment="Center">
+									<font fontName="VerdanaReports" size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{Sets}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="40" uuid="add8b9dc-04a0-4d27-9af8-dddeecc60da4">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="40" height="30" forecolor="#FFFFFF" uuid="8a88ede2-62db-4241-9229-6abbe15023c7"/>
+								<textElement textAlignment="Center">
+									<font fontName="VerdanaReports" size="9" isBold="true"/>
+								</textElement>
+								<text><![CDATA[1]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField pattern="#,##0.###;(#,##0.###-)">
+								<reportElement x="0" y="0" width="40" height="30" uuid="9eca71db-fe15-4448-8591-f4fd49b9d133"/>
+								<textElement textAlignment="Center">
+									<font fontName="VerdanaReports" size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{1S}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="40" uuid="b4ce28dc-a975-4a31-add5-5d61487c8fd0">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="40" height="30" forecolor="#FFFFFF" uuid="d0342040-6b1c-4321-acf8-c4a7853bf62e"/>
+								<textElement textAlignment="Center">
+									<font fontName="VerdanaReports" size="9" isBold="true"/>
+								</textElement>
+								<text><![CDATA[2]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField pattern="#,##0.###;(#,##0.###-)">
+								<reportElement x="0" y="0" width="40" height="30" uuid="9238b6cd-3aea-46ce-9173-695ce1742b1d"/>
+								<textElement textAlignment="Center">
+									<font fontName="VerdanaReports" size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{2S}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="40" uuid="58ae52b9-c008-410a-bdac-903bf83a1693">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column5"/>
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="40" height="30" forecolor="#FFFFFF" uuid="985dbb84-7402-4f12-af81-a410f8225f18"/>
+								<textElement textAlignment="Center">
+									<font fontName="VerdanaReports" size="9" isBold="true"/>
+								</textElement>
+								<text><![CDATA[3]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField pattern="#,##0.###;(#,##0.###-)">
+								<reportElement x="0" y="0" width="40" height="30" uuid="677c09b0-71cb-42cb-8cf4-2db334ea1055"/>
+								<textElement textAlignment="Center">
+									<font fontName="VerdanaReports" size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{3S}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="40" uuid="4b4225d0-889d-4fce-8634-216e8937aca5">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column6"/>
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="40" height="30" forecolor="#FFFFFF" uuid="d48817e9-1caf-4402-aa68-d0c23797baf7"/>
+								<textElement textAlignment="Center">
+									<font fontName="VerdanaReports" size="9" isBold="true"/>
+								</textElement>
+								<text><![CDATA[4]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField pattern="#,##0.###;(#,##0.###-)">
+								<reportElement x="0" y="0" width="40" height="30" uuid="9f4faa8b-157e-4bb1-8079-208556076094"/>
+								<textElement textAlignment="Center">
+									<font fontName="VerdanaReports" size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{4S}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="40" uuid="81d2b3b8-9f59-4046-9b3d-24d24912605c">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column7"/>
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="40" height="30" forecolor="#FFFFFF" uuid="cf84dd02-1318-4362-b802-313d307dca07"/>
+								<textElement textAlignment="Center">
+									<font fontName="VerdanaReports" size="9" isBold="true"/>
+								</textElement>
+								<text><![CDATA[5]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField pattern="#,##0.###;(#,##0.###-)">
+								<reportElement x="0" y="0" width="40" height="30" uuid="2e11b023-44a3-48ec-83fd-5e5cc03332d6"/>
+								<textElement textAlignment="Center">
+									<font fontName="VerdanaReports" size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{5S}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="40" uuid="5d11b855-9e3c-4281-ba4f-ff79e295297d">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column8"/>
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="40" height="30" forecolor="#FFFFFF" uuid="6b841b31-8ed6-488a-86a2-369f39522c48"/>
+								<textElement textAlignment="Center">
+									<font fontName="VerdanaReports" size="9" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Total]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField pattern="#,##0.###;(#,##0.###-)">
+								<reportElement x="0" y="0" width="40" height="30" uuid="b37cd41f-9ae7-4774-859c-e2bf57929c90"/>
+								<textElement textAlignment="Center">
+									<font fontName="VerdanaReports" size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{Total}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<staticText>
+				<reportElement style="Text10" positionType="Float" x="200" y="0" width="100" height="14" uuid="0a99f27b-a58f-41db-be3f-f5e7c169b3df"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Resultados Set]]></text>
+			</staticText>
+		</band>
+		<band height="40">
+			<staticText>
+				<reportElement style="Text10" positionType="Float" x="200" y="0" width="100" height="14" uuid="3b5c0571-8a4f-463b-a6c0-8c8f21ae969d"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Alineaciones]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="0" y="14" width="250" height="26" uuid="4a7874cb-f38f-45f1-a47d-e2957d195cca"/>
+				<subreportParameter name="CompetidorId">
+					<subreportParameterExpression><![CDATA[$F{CompetidorIdA}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="CronogramaId">
+					<subreportParameterExpression><![CDATA[$P{CronogramaId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["Reportes/rptVolyResumen/srptAlineacion.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement x="260" y="14" width="250" height="26" uuid="680d116e-7fb5-4bb5-8652-51eaaa0007bd"/>
+				<subreportParameter name="CompetidorId">
+					<subreportParameterExpression><![CDATA[$F{CompetidorIdB}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="CronogramaId">
+					<subreportParameterExpression><![CDATA[$P{CronogramaId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["Reportes/rptVolyResumen/srptAlineacion.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="30">
+			<staticText>
+				<reportElement style="Text10" positionType="Float" x="200" y="0" width="100" height="14" uuid="b06a6a88-a671-4bee-bb18-cfd721be543c"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cuerpo Técnico]]></text>
+			</staticText>
+		</band>
+		<band height="29">
+			<staticText>
+				<reportElement style="Text10" positionType="Float" x="200" y="0" width="100" height="14" uuid="45d36ae4-483a-4d30-83d8-4ad12964f5d4"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Arbitraje]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="49">
+			<subreport isUsingCache="true" overflowType="NoStretch">
+				<reportElement x="0" y="0" width="536" height="49" uuid="8ba8de03-0381-4f03-a70d-60e98ca0d7ed">
+					<property name="com.jaspersoft.studio.unit.height" value="cm"/>
+				</reportElement>
+				<subreportParameter name="CronogramaId">
+					<subreportParameterExpression><![CDATA[$P{CronogramaId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="EventoId">
+					<subreportParameterExpression><![CDATA[$P{EventoId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="ReporteId">
+					<subreportParameterExpression><![CDATA[$P{ReporteId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="NombreSistema">
+					<subreportParameterExpression><![CDATA[$P{NombreSistema}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["Reportes/rptVolyResumen/srptSummary.jrxml"]]></subreportExpression>
+			</subreport>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="89" splitType="Stretch">
+			<subreport isUsingCache="true" overflowType="NoStretch">
+				<reportElement x="0" y="0" width="536" height="89" uuid="8fb37dd2-b871-49b8-ad76-d3dbb40613da">
+					<property name="com.jaspersoft.studio.unit.height" value="cm"/>
+				</reportElement>
+				<subreportParameter name="CronogramaId">
+					<subreportParameterExpression><![CDATA[$P{CronogramaId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="EventoId">
+					<subreportParameterExpression><![CDATA[$P{EventoId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="ReporteId">
+					<subreportParameterExpression><![CDATA[$P{ReporteId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="NombreSistema">
+					<subreportParameterExpression><![CDATA[$P{NombreSistema}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["Resources/Template/Footer.jrxml"]]></subreportExpression>
+			</subreport>
+		</band>
+	</pageFooter>
+</jasperReport>

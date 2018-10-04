@@ -1,0 +1,113 @@
+<!--
+  Generated template for the SettingsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Configuraciones</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <div padding>
+    <ion-segment [(ngModel)]="options" (click)="butonsClick()">
+      <ion-segment-button value="deporte">
+        Deporte
+      </ion-segment-button>
+      <ion-segment-button value="servidor">
+        Servidor
+      </ion-segment-button>
+      <!-- <ion-segment-button value="visor">
+        Visor
+      </ion-segment-button> -->
+    </ion-segment>
+  </div>
+
+
+  <div [ngSwitch]="options">
+    <ion-list *ngSwitchCase="'deporte'">
+      <ion-item>
+        <ion-card>
+          <ion-card-header>
+            Deporte Seleccionado
+          </ion-card-header>
+          <ion-card-content text-center>
+            <h1>
+              <strong>{{textDeporte}}</strong>
+            </h1>
+          </ion-card-content>
+        </ion-card>
+        <ion-list>
+          <ion-grid>
+            <ion-row>
+              <ion-col col-6 ion-item ion-text *ngFor="let item of deportes">
+                <button ion-button large block (click)="clickDeporte(item)" [color]="color">{{item.text}}</button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-list>
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'servidor'">
+      <ion-item>
+        <ion-label color="primary" stacked>Evento</ion-label>
+        <ion-input type="text" placeholder="Evento" [(ngModel)]="eventoId"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" stacked>Límite de Periodos</ion-label>
+        <ion-input type="text" placeholder="Límite de Periodos" [(ngModel)]="nroPeriodos"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" stacked>Common Server</ion-label>
+        <ion-input type="text" placeholder="Common Server" [(ngModel)]="commonServer"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" stacked>Generic Server</ion-label>
+        <ion-input type="text" placeholder="Generic Server" [(ngModel)]="genericServer"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" stacked>Conjunto Server</ion-label>
+        <ion-input type="text" placeholder="Conjunto Server" [(ngModel)]="conjuntoServer"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" stacked>Socket Server</ion-label>
+        <ion-input type="text" placeholder="Socket Server" [(ngModel)]="socketServer"></ion-input>
+      </ion-item>
+      <ion-item>
+        <button ion-button block (click)="saveServers(false)">Valores por defecto</button>
+      </ion-item>
+      <ion-item>
+        <button ion-button block (click)="saveServers(true)">Guardar</button>
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'visor'">
+      <ion-item>
+        <ion-card>
+          <ion-card-header>
+            Pantalla Seleccionada
+          </ion-card-header>
+          <ion-card-content text-center>
+            <h1>
+              <strong>{{textPantalla}}</strong>
+            </h1>
+          </ion-card-content>
+        </ion-card>
+        <ion-list>
+          <ion-grid>
+            <ion-row>
+              <ion-col col-6 ion-item ion-text *ngFor="let item of pantallas">
+                <button ion-button large block (click)="clickPantalla(item)" [color]="color">{{item}}</button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-list>
+      </ion-item>
+    </ion-list>
+  </div>
+
+</ion-content>

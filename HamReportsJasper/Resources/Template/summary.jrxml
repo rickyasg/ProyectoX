@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.0.final using JasperReports Library version 6.4.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="summary" pageWidth="612" pageHeight="792" columnWidth="527" leftMargin="0" rightMargin="85" topMargin="0" bottomMargin="0" uuid="3223f324-da17-4b05-af5b-af108fe013cc">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SQLDeportes"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.unit." value="cm"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="cm"/>
+	<template><![CDATA["Resources/Styles/style_basic.jrtx"]]></template>
+	<parameter name="Fecha" class="java.lang.String">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<parameter name="Hora" class="java.lang.String"/>
+	<parameter name="EventoId" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[EXEC	[erp].[pGetPronosticoTiempos]
+		@Fecha =  $P{Fecha} ,
+		@Hora = $P{Hora} ,
+		@EventoId =  $P{EventoId}]]>
+	</queryString>
+	<field name="PronosticoTiempoId" class="java.lang.Integer"/>
+	<field name="EventoId" class="java.lang.Integer"/>
+	<field name="Fecha" class="java.sql.Date"/>
+	<field name="Hora" class="java.sql.Time"/>
+	<field name="Temperatura" class="java.lang.String"/>
+	<field name="Viento" class="java.lang.String"/>
+	<field name="RafagaViento" class="java.lang.String"/>
+	<field name="Lluvia" class="java.lang.String"/>
+	<field name="Humedad" class="java.lang.String"/>
+	<field name="Presion" class="java.lang.String"/>
+	<field name="Nubes" class="java.lang.String"/>
+	<summary>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement key="" style="DataTimeFormat" x="0" y="0" width="79" height="10" uuid="932e0744-37fe-4bf6-b1a2-bd12eeb94e3b"/>
+				<textElement>
+					<font fontName="SansSerif" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Condiciones Climáticas]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="Text6" x="100" y="11" width="50" height="9" uuid="dfee5311-aa52-4a77-93a5-c9879c4fe07f"/>
+				<textElement textAlignment="Left">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Temperatura}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Text6" x="200" y="11" width="50" height="9" uuid="1f10afb7-0290-4d8d-9b35-ac05cd049ab2"/>
+				<textElement textAlignment="Left">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Humedad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Text6" x="300" y="11" width="50" height="9" uuid="d8748820-4fda-4028-aaaf-9dc2448f37ce"/>
+				<textElement textAlignment="Left">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Nubes}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Text6" x="400" y="11" width="50" height="9" uuid="82f7acad-3111-4680-bf0f-784b067ddda3"/>
+				<textElement textAlignment="Left">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Viento}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Text6" x="50" y="11" width="50" height="9" uuid="3651ed3c-d719-4ff6-b2f4-35060286d6a0"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Temperatura:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Text6" x="150" y="11" width="50" height="9" uuid="1e7c969d-757e-405f-b8b3-3422297b7684"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Humedad:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Text6" x="250" y="11" width="50" height="9" uuid="b48a4afd-f0b9-4fbc-b812-abc1960699d3"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Nubes:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Text6" x="350" y="11" width="50" height="9" uuid="8ce98205-52ab-4d47-893d-44f6157ec3b2"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Vientos:]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

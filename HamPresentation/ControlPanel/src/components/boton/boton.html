@@ -1,0 +1,38 @@
+<table>
+  <tr>
+    <td>
+      <button *ngIf="!posicion" full class="alto_menos" (click)="quitarPunto()">
+        <ion-icon name="remove-circle"></ion-icon>
+      </button>
+      <button *ngIf="posicion" full outline class="alto_mas" (click)="registrarPunto()">
+        <ion-icon name="add-circle"></ion-icon>
+      </button>
+    </td>
+    <td>
+      <button ion-button full class="alto" [ngStyle]="{  'background-color': this.DatosParametros.Color }">
+        <table width="100%">
+          <tr>
+            <td width="10%" *ngIf="posicion">
+              <img src="assets/iconoscontrol/{{DatosParametros.ParametroSucesoId}}.png" class="img" />
+            </td>
+            <td width="10%" *ngIf="!posicion">{{DatosParametros.Valor}}</td>
+            <td>{{DatosParametros.Parametro}}</td>
+            <td width="10%" *ngIf="posicion">{{DatosParametros.Valor}}</td>
+            <td width="10%" *ngIf="!posicion">
+              <img src="assets/iconoscontrol/{{DatosParametros.ParametroSucesoId}}.png" class="img" />
+            </td>
+
+          </tr>
+        </table>
+      </button>
+    </td>
+    <td>
+      <button *ngIf="posicion" block class="alto_menos" [ngStyle]="{  'background-color': red}" (click)="quitarPunto()">
+        <ion-icon name="remove-circle"></ion-icon>
+      </button>
+      <button *ngIf="!posicion" full outline class="alto_mas" [ngStyle]="{  'background-color': blue}" (click)="registrarPunto()">
+        <ion-icon name="add-circle"></ion-icon>
+      </button>
+    </td>
+  </tr>
+</table>

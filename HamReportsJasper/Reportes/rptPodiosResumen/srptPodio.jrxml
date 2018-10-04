@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.0.final using JasperReports Library version 6.4.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="srptPodio" pageWidth="612" pageHeight="792" columnWidth="612" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" whenResourceMissingType="Key" uuid="004fed0a-ffeb-426c-b5c7-473832cb183b">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SQLDeportes"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.unit." value="cm"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="cm"/>
+	<subDataset name="Cabecera" uuid="360ba6d9-d940-4359-a988-161d50fe6210">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SQLDeportes"/>
+		<queryString language="SQL">
+			<![CDATA[	select d.Deporte, p.Prueba, case pe.ParametroRamaId when 1 then 'Masculino' when 2 then  'Femenino' else 'Mixto' end as Rama
+		from prog.Cronograma c 
+			inner join prog.PruebasEvento pe on pe.PruebaEventoId = c.PruebaEventoId
+			inner join prog.Pruebas p on  p.PruebaId  = pe.PruebaId
+			inner join prog.Deportes d on d.DeporteId = p.DeporteId
+		where c.CronogramaId = 3734]]>
+		</queryString>
+		<field name="Deporte" class="java.lang.String"/>
+		<field name="Prueba" class="java.lang.String"/>
+		<field name="Rama" class="java.lang.String"/>
+		<group name="Deporte">
+			<groupExpression><![CDATA[$F{Deporte}]]></groupExpression>
+		</group>
+		<group name="Prueba">
+			<groupExpression><![CDATA[$F{Prueba}]]></groupExpression>
+		</group>
+		<group name="Rama">
+			<groupExpression><![CDATA[$F{Rama}]]></groupExpression>
+		</group>
+	</subDataset>
+	<parameter name="EventoId" class="java.lang.String"/>
+	<parameter name="DeporteId" class="java.lang.String"/>
+	<parameter name="PruebaId" class="java.lang.String"/>
+	<parameter name="ParametroRamaId" class="java.lang.String"/>
+	<parameter name="UrlImages" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[EXEC   [prog].[pGetPodios]
+		@EventoId =  $P{EventoId} ,
+		@DeporteId = $P{DeporteId} ,
+		@PruebaId = $P{PruebaId}  ,
+		@ParametroRamaId =  $P{ParametroRamaId}]]>
+	</queryString>
+	<field name="PruebaEventoId" class="java.lang.Integer"/>
+	<field name="Fecha" class="java.sql.Date"/>
+	<field name="HoraProgramada" class="java.sql.Time"/>
+	<field name="Deporte" class="java.lang.String"/>
+	<field name="Prueba" class="java.lang.String"/>
+	<field name="RamaDeporte" class="java.lang.String"/>
+	<field name="Marca" class="java.lang.Double"/>
+	<field name="Puntaje" class="java.lang.Double"/>
+	<field name="Tiempo" class="java.lang.String"/>
+	<field name="Equipo" class="java.lang.String"/>
+	<field name="Delegacion" class="java.lang.String"/>
+	<field name="Medalla" class="java.lang.String"/>
+	<field name="ParametroMedallaId" class="java.lang.Integer"/>
+	<field name="Representacion" class="java.lang.String"/>
+	<field name="FotoUrl" class="java.lang.String"/>
+	<field name="DelegacionId" class="java.lang.Integer"/>
+	<detail>
+		<band height="108" splitType="Stretch">
+			<frame>
+				<reportElement x="50" y="0" width="340" height="34" uuid="013deeac-85e8-45b0-a95c-a8c1630c6be1">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.unit.x" value="cm"/>
+				</reportElement>
+				<textField>
+					<reportElement x="0" y="0" width="340" height="34" uuid="546da3ca-4abc-4e29-afd2-b88c1401f740"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="VerdanaReports" size="18" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{Equipo}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="52" y="34" width="178" height="39" uuid="53604df0-513a-4f44-9811-b14cbddce5a1">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.unit.width" value="cm"/>
+				</reportElement>
+				<textField isBlankWhenNull="true">
+					<reportElement x="0" y="0" width="178" height="39" uuid="908cd076-d35d-44db-9349-29b306c2df7f"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="VerdanaReports" size="19"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{Delegacion}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<textField>
+				<reportElement x="53" y="73" width="222" height="20" uuid="5c4aacbd-e274-431e-ba36-38ebccf0ecce"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="VerdanaReports" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[((!$F{Tiempo}.equals( "00:00:00.00" ))? $F{Tiempo}  : "")+
+((!($F{Marca}.equals("0.0")))? $F{Marca}  : "")+
+((!$F{Puntaje}.equals( "0.0" ))? $F{Puntaje}  : "")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="36" width="150" height="35" uuid="46fd047b-39f8-4191-aa8f-882ddb517632"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" rotation="None">
+					<font fontName="VerdanaReports" size="23" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Medalla}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="104" width="601" height="1" uuid="f7041c69-aea9-49f1-97c6-6c578f507052">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+</jasperReport>

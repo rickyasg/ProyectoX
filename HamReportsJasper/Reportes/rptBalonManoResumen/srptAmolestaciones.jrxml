@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.0.final using JasperReports Library version 6.4.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="srptAmolestaciones" pageWidth="255" pageHeight="792" columnWidth="255" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="fda8e0c4-6df6-4cb2-b326-00313d254e40">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SQLEstable"/>
+	<property name="com.jaspersoft.studio.unit." value="cm"/>
+	<template><![CDATA["Resources/Styles/style_basic.jrtx"]]></template>
+	<parameter name="CronogramaId" class="java.lang.String"/>
+	<parameter name="CompetidorId" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM [conj].[fGetTarjetasBalonmano] ( $P{CronogramaId} , $P{CompetidorId} )
+ order by ParametroSucesoId]]>
+	</queryString>
+	<field name="Tiempo" class="java.lang.Integer"/>
+	<field name="NombreJugador" class="java.lang.String"/>
+	<field name="ParametroSucesoId" class="java.lang.Integer"/>
+	<field name="Parametro" class="java.lang.String"/>
+	<field name="Abreviatura" class="java.lang.String"/>
+	<detail>
+		<band height="13" splitType="Stretch">
+			<textField>
+				<reportElement style="Text10" x="6" y="0" width="40" height="13" uuid="895a3e9f-d1b8-4b2c-8b7c-485bb6acbceb"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Abreviatura}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Text10" x="60" y="0" width="170" height="13" uuid="f1c0b3c8-9da5-44c0-b488-19a38be830aa"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NombreJugador}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Text10" x="230" y="0" width="25" height="13" uuid="d1e8b4af-02c4-4e3c-856d-96388ff7a884"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[IF($F{Tiempo}==0,"",($F{Tiempo}).toString()+"'")]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

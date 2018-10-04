@@ -1,0 +1,225 @@
+<p-growl [value]="msgs"></p-growl>
+
+<div class="ui-g">
+  <div class="ui-g-12">
+    <div class="card card-w-title">
+  <h1>Registro de Denuncias</h1>
+ 
+  <p-tabView>
+    <p-tabPanel header="Delito" leftIcon="pi pi-calendar">
+        <div  class="ui-g" >
+                <button pButton type="button"  class="green-btn btnCambioJugador btnGolf" (click)="onSaveCaso('paso1')"
+                label="Crear"></button>
+    <p-fieldset class="ui-g-12" legend="Detalle"> 
+      <div class="ui-g-6" style="width:250px;margin-bottom:10px" >
+            <p-dropdown [options]="this._Delitos" placeholder="Seleccione" [group]="true" 
+            [style]="{'width':'250px'}" filter="filter" (onClick)="doClicDrop($event)" >
+            <ng-template let-group pTemplate="group">
+                <span style="margin-left:.25em">{{group.label}}</span>
+            </ng-template>
+        </p-dropdown> 
+        <div class="ui-g-12">
+            <!-- <p-table [value]="this._Delitos" sortField="brand" sortMode="single" (onSort)="onSort()">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>Orden</th>
+                        <th>Crimen</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-rowData let-rowIndex="rowIndex">
+                    <tr class="ui-widget-header" *ngIf="rowGroupMetadata[rowData.brand].index === rowIndex">
+                        <td colspan="3">
+                            <span style="font-weight:bold">{{rowData.brand}}</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>{{rowData.vin}}</td>
+                        <td>{{rowData.year}}</td>
+                        <td>{{rowData.color}}</td>
+                    </tr>
+                </ng-template>
+            </p-table> -->
+            
+        </div>
+        </div>
+        <div id="div_form" class="ui-g" >
+                <span>
+                    <app-drop-parametros class="form-control" [GroupId]=6 LabelText="Divici&#243;n"  (Parameter)="SelectParametro($event,6)" [Filter]="true"  ></app-drop-parametros>
+                </span>
+                <span class="md-inputfield">
+                        <input type="text" pInputText  class="form-control" [(ngModel)]="_complaint.FiscalCase" tabindex="1"/>
+                        <label>Nro. Caso Fiscal</label>
+                </span>
+                <span>
+                        <app-drop-offices [Level]=1 [dependentId]=1 LabelText="Departamento" (office)="SelectOfficeDepartamento($event)" [Filter]="true"  ></app-drop-offices>
+                </span>
+                <span>
+                        <app-drop-offices [Level]=2 [dependentId]="_office.OfficeId" LabelText="Comisaria" (office)="SelectOfficeComiseria($event)" [Filter]="true"  ></app-drop-offices>
+                </span>
+            </div>
+        </p-fieldset>
+    </div>
+    </p-tabPanel>
+    <p-tabPanel header="Denunciante" leftIcon="ui-icon-person" [disabled]="_hideDenuncia">
+    <div class="ui-g">
+            <button pButton type="button"  class="green-btn" (click)="onSaveDenunciante('paso1')" label="Guardar"></button>
+        <div class="ui-g-12 ">
+            <div class="ui-g-3-inputgroup">
+                    <p-autoComplete [(ngModel)]="country" [suggestions]="filteredCountriesSingle" (completeMethod)="filterCountrySingle($event)" field="name" [size]="30"
+                    placeholder="Countries" [minLength]="1"></p-autoComplete>
+                <span style="margin-left:10px">Country: {{country ? country.name||country : 'none'}}</span>
+            </div>
+            <!-- <div class="ui-g-12" style="width:250px;margin-bottom:10px"> -->
+                    -<div class="ui-g-3"><p-checkbox name="group1" value="1" label="Denunciante"  inputId="ny"></p-checkbox></div>
+                    <div class="ui-g-3"><p-checkbox name="group1" value="2" label="Victima"  inputId="sf"></p-checkbox></div>
+                    <div class="ui-g-3"><p-checkbox name="group1" value="3" label="Acusado/a"   inputId="la"></p-checkbox></div>
+                    <div class="ui-g-3"><p-checkbox name="group1" value="4" label="Implicado/Complice/Participante "   inputId="la"></p-checkbox></div>
+                <!-- </div> -->
+        </div>
+
+      <div class="ui-g-12">
+      <p-fieldset class="ui-g-6" legend="Datos Personales">
+         <div id="div_form"class="ui-g">
+                  <span class="md-inputfield">
+                      <input type="text" [(ngModel)]="_complaint.Denunciante.Name" pInputText  class="form-control" tabindex="1"/>
+                      <label>Nombre</label>
+                  </span>
+                  <span class="md-inputfield">
+                        <input type="text"  [(ngModel)]="_complaint.Denunciante.SecondName"  pInputText  class="form-control" tabindex="2" />
+                        <label>Segundo Nombre</label>
+                    </span>
+                  <span class="md-inputfield">
+                      <input type="text" [(ngModel)]="_complaint.Denunciante.LastName" pInputText  class="form-control" tabindex="3" />
+                      <label>Paterno</label>
+                  </span>
+                  <span class="md-inputfield">
+                        <input type="text" [(ngModel)]="_complaint.Denunciante.SecondLastName"  pInputText  class="form-control" tabindex="4" />
+                        <label>Materno</label>
+                    </span>
+                <span class="md-inputfield">
+                      <input type="text" [(ngModel)]="_complaint.Denunciante.NroDocument"  pInputText  class="form-control" tabindex="5" />
+                      <label>Nro. Documentos</label>
+                  </span>
+                  <span>
+                        <app-drop-parametros class="form-control" [GroupId]=1 LabelText="Extenci&#243;n"  (Parameter)="SelectParametro($event,1)" tabindex="6" ></app-drop-parametros>
+                  </span>
+                  <span>
+                        <app-drop-parametros class="form-control" [GroupId]=4 LabelText="Genero"  (Parameter)="SelectParametro($event)"  tabindex="7"></app-drop-parametros>
+                  </span>
+                  <span class="md-inputfield">
+                  <p-calendar [(ngModel)]="this._complaint.Denunciante.BirthDate" [showIcon]="true" tabindex="8"></p-calendar>
+                  <label>Fecha Nac. dd/mm/yyyy</label>
+                </span>
+                  <span>
+                        <app-drop-parametros class="form-control" [GroupId]=5 LabelText="Estado Civil"  (Parameter)="SelectParametro($event,5)" tabindex="9" ></app-drop-parametros>
+                  </span>
+                  <span >   
+                    <app-drop-parametros class="form-control" [GroupId]=2 LabelText="Nacionalidad"  (Parameter)="SelectParametro($event,2)" tabindex="10" ></app-drop-parametros>
+                  </span>
+                  <span class="md-inputfield">
+                      <input type="text" [(ngModel)]="_complaint.Denunciante.Address"  pInputText  class="form-control" tabindex="11" />
+                      <label>Domicilio</label>
+                  </span>
+                  <span class="md-inputfield">
+                        <input type="text" [(ngModel)]="_complaint.Denunciante.Phone"   pInputText  class="form-control" tabindex="12" />
+                        <label>Telefono</label>
+                    </span>
+         </div> 
+      </p-fieldset>
+      <p-fieldset class="ui-g-6" legend="Datos Laborales">
+            <div id="div_form" class="ui-g-12">
+                <span class="md-inputfield">
+                    <input type="text"  pInputText [(ngModel)]="_complaint.Denunciante.Occupation" class="form-control" tabindex="101"/>
+                    <label>Profesión/Ocupación</label>
+                </span>
+                <span class="md-inputfield">
+                    <input type="text" pInputText  [(ngModel)]="_complaint.Denunciante.Workplace"  class="form-control" tabindex="102" />
+                    <label>Lugar de Trabajo</label>
+                </span>
+                <span class="md-inputfield">
+                    <input type="text" pInputText [(ngModel)]="_complaint.Denunciante.wPhone"  class="form-control" tabindex="103" />
+                    <label>Nro. Telefonico</label>
+                </span>
+                <span class="md-inputfield">
+                    <input type="text" pInputText [(ngModel)]="_complaint.Denunciante.wAddress" class="form-control" tabindex="104" />
+                    <label>Dirección</label>
+                </span>
+        </div>
+      </p-fieldset>
+      </div>
+      <div class="ui-g-12">
+            <p-dataTable [value]="_listado" [responsive]="true" selectionMode="single"  
+            [(selection)]="Usuario" [rows]="10" [paginator]="true"  [globalFilter]="gb">
+            <!-- (onRowUnselect)="onRowUnselect($event)"
+            (onRowDblclick)="handleRowDblclickUsuario($event)"  -->
+                        <p-column field="NroDenuncia" header="Nro. Denuncia" size="40"></p-column>
+                        <p-column field="FiscalCase" header="Nro. Caso" size="40"></p-column>
+                        <p-column field="TipoDenuncia" header="Tipo de Denuncia" size="40"></p-column>
+                        <p-column field="Division" header="División" size="40"></p-column>
+                        <p-column field="Denunciante" header="Denunciante" size="40"></p-column>
+                        <p-column field="FechaHecho" header="Fecha Hecho" size="8">
+                            <ng-template let-col let-fecha="rowData" pTemplate="body">
+                                {{fecha[col.field] | date:'shortDate'}}
+                            </ng-template>
+                        </p-column>
+                        <p-column field="FechaRegistro" header="Fecha Registro" size="8">
+                              <ng-template let-col let-fecha="rowData" pTemplate="body">
+                                  {{fecha[col.field] | date:'shortDate'}}
+                              </ng-template>
+                          </p-column>
+      
+                        <p-column field="estado" header="Estado" size="3">
+ 
+                        </p-column>
+             </p-dataTable>
+      </div>
+      </div>
+    </p-tabPanel>
+    <p-tabPanel header="Hechos" leftIcon="pi pi-user" rightIcon="pi pi-star" [disabled]="_hidehechos" >
+            <button pButton type="button"  class="green-btn" (click)="onSaveHechos('paso1')" label="Guardar"></button>
+        <p-fieldset class="ui-g" legend="Locación/Ubicacion">
+        <div id="div_form" class="ui-g">    
+            <span>
+                <app-drop-zonificacion [Level]=0 [dependentId]=0 LabelText="Departamento" (zone)="SelectDepartment($event) " tabindex="201"></app-drop-zonificacion>
+            </span>
+            <span>
+                <app-drop-zonificacion [Level]=1 [dependentId]="_department.ZoningId" LabelText="Provincia" (zone)="SelectProvince($event)" tabindex="202"></app-drop-zonificacion>
+            </span>
+            <span>
+                <app-drop-zonificacion [Level]=2 [dependentId]="_province.ZoningId" LabelText="Municipio" (zone)="SelectMunicipio($event)" tabindex="203"></app-drop-zonificacion>
+            </span>
+            <span>
+                <app-drop-zonificacion [Level]=3 [dependentId]="_municipality.ZoningId" LabelText="Zona" (zone)="SelectZona($event)" tabindex="204"></app-drop-zonificacion>
+            </span>
+            <span>
+            <app-drop-parametros  [style]="{'width':'150px'}" class="form-control" [GroupId]=3 LabelText="Tipo Via"  (Parameter)="SelectParametro($event,3)" tabindex="205"  ></app-drop-parametros>
+             </span>
+            <span class="md-inputfield">
+                <input style="width:250px"  type="text" pInputText  class="form-control" [(ngModel)]="_complaint.NameStreet" tabindex="206"/>
+                <label>Nombre de Calle/Avenida</label>
+            </span>
+            <span class="md-inputfield">
+                <input style="width:250px"   type="text" pInputText  class="form-control" [(ngModel)]="_complaint.DetailAddrees"  tabindex="207"/>
+                <label>Resto de Direccion</label>
+            </span>
+            <span class="md-inputfield">
+                    <p-calendar [(ngModel)]="_complaint.DateFact" [showIcon]="true" tabindex="208"></p-calendar>
+            <label>Fecha dd/mm/yyyy</label>
+            </span>
+            <span class="md-inputfield">
+                    <p-calendar [(ngModel)]="_complaint.HourFact" [showIcon]="true" [timeOnly]="true" tabindex="209"></p-calendar>
+            <label>Hora Aprox:</label>
+            </span>
+       </div> 
+    </p-fieldset>
+    <p-fieldset legend="Breve detalle del Hecho">
+            <p-editor [(ngModel)]="_complaint.Detail" [style]="{'height':'320px'} " tabindex="2010" ></p-editor>
+    </p-fieldset>
+    </p-tabPanel>
+    <p-tabPanel header="Objetos" leftIcon="pi pi-user" rightIcon="pi pi-star" [disabled]="true">
+      After a break of more than  15 years, director Francis Ford Coppola and writer Mario Puzo returned to the well for this third and final story of the fictional Corleone crime family. Two decades have passed, and crime kingpin Michael Corleone, now divorced from his wife Kay has nearly succeeded in keeping his promise that his family would one day be completely legitimate.
+  </p-tabPanel>
+  </p-tabView>
+  </div>
+  </div>
+  </div>

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.0.final using JasperReports Library version 6.4.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PodResumenGrande" pageWidth="612" pageHeight="792" columnWidth="536" leftMargin="56" rightMargin="20" topMargin="20" bottomMargin="20" whenResourceMissingType="Error" uuid="d28c8008-121f-402a-a886-2a39e78dace2">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.unit." value="cm"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SQLDeportes"/>
+	<property name="ireport.jasperserver.url" value="http://pluris2017.mindeportes.gob.bo:8080/jasperserver/"/>
+	<property name="ireport.jasperserver.user" value="jasperadmin"/>
+	<property name="ireport.jasperserver.reportUnit" value="/Reports/Hammer/rptIndividual"/>
+	<property name="ireport.jasperserver.report.resource" value="/Reports/Hammer/rptIndividual_files/main_jrxml"/>
+	<template><![CDATA["Resources/Styles/style_basic.jrtx"]]></template>
+	<subDataset name="Listado" uuid="ca8a275e-507b-431d-858a-6f39ce0f4a57">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SQLDeportes"/>
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<parameter name="EventoId" class="java.lang.String"/>
+		<parameter name="DeporteId" class="java.lang.String"/>
+		<parameter name="PruebaId" class="java.lang.String"/>
+		<parameter name="ParametroRamaId" class="java.lang.String"/>
+		<queryString>
+			<![CDATA[EXEC [prog].[pGetCompetidoresDeportes]
+  @EventoId =  $P{EventoId} ,
+  @DeporteId = $P{DeporteId}  ,
+  @PruebaId =  $P{PruebaId} ,
+  @ParametroRamaId =  $P{ParametroRamaId}]]>
+		</queryString>
+		<field name="PruebaEventoId" class="java.lang.Integer"/>
+		<field name="Fecha" class="java.sql.Date"/>
+		<field name="HoraProgramada" class="java.sql.Time"/>
+		<field name="Deporte" class="java.lang.String"/>
+		<field name="Prueba" class="java.lang.String"/>
+		<field name="RamaDeporte" class="java.lang.String"/>
+		<field name="Marca" class="java.lang.Double"/>
+		<field name="Puntaje" class="java.lang.Double"/>
+		<field name="Tiempo" class="java.lang.String"/>
+		<field name="Equipo" class="java.lang.String"/>
+		<field name="Delegacion" class="java.lang.String"/>
+		<field name="Posicion" class="java.lang.Integer"/>
+		<field name="Representacion" class="java.lang.String"/>
+		<field name="FotoUrl" class="java.lang.String"/>
+		<field name="DelegacionId" class="java.lang.Integer"/>
+	</subDataset>
+	<parameter name="EventoId" class="java.lang.String">
+		<defaultValueExpression><![CDATA["1"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="ReporteId" class="java.lang.String">
+		<defaultValueExpression><![CDATA["3"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="CronogramaId" class="java.lang.String">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+		<defaultValueExpression><![CDATA["1067"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="NombreSistema" class="java.lang.String">
+		<defaultValueExpression><![CDATA["Resultados provistos por Hammer"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="UrlImages" class="java.lang.String">
+		<defaultValueExpression><![CDATA["C:/HammerResources/Images/Logos"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="DeporteId" class="java.lang.String">
+		<defaultValueExpression><![CDATA["7"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PruebaId" class="java.lang.String">
+		<defaultValueExpression><![CDATA["18"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="ParametroRamaId" class="java.lang.String">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+		<defaultValueExpression><![CDATA["1"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select d.Deporte, p.Prueba, case pe.ParametroRamaId when 1 then 'Masculino' when 2 then  'Femenino' else 'Mixto' end as Rama
+		from prog.Cronograma c 
+			inner join prog.PruebasEvento pe on pe.PruebaEventoId = c.PruebaEventoId
+			inner join prog.Pruebas p on  p.PruebaId  = pe.PruebaId
+			inner join prog.Deportes d on d.DeporteId = p.DeporteId
+		where c.CronogramaId =  $P{CronogramaId} ]]>
+	</queryString>
+	<field name="Deporte" class="java.lang.String"/>
+	<field name="Prueba" class="java.lang.String"/>
+	<field name="Rama" class="java.lang.String"/>
+	<group name="Group2"/>
+	<pageHeader>
+		<band height="83" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="cm"/>
+			<subreport isUsingCache="false" runToBottom="false">
+				<reportElement x="0" y="10" width="536" height="73" uuid="d89243a0-b81c-45f9-b49c-43b041461f48"/>
+				<subreportParameter name="EventoId">
+					<subreportParameterExpression><![CDATA[$P{EventoId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="CronogramaId">
+					<subreportParameterExpression><![CDATA[$P{CronogramaId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="ReporteId">
+					<subreportParameterExpression><![CDATA[$P{ReporteId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="UrlImages">
+					<subreportParameterExpression><![CDATA[$P{UrlImages}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["Resources/Template/Header.jrxml"]]></subreportExpression>
+			</subreport>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="127">
+			<printWhenExpression><![CDATA[!(
+	($P{DeporteId}.equals( "3" )) ||
+	($P{DeporteId}.equals( "4" )) ||
+	($P{DeporteId}.equals( "5" )) ||
+	($P{DeporteId}.equals( "6" )) 
+)]]></printWhenExpression>
+			<textField>
+				<reportElement x="243" y="20" width="140" height="30" uuid="06664f66-e3ea-4a1e-af8c-3387bc835b09"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Deporte}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="243" y="52" width="260" height="30" uuid="c493fe0a-68ec-4d2d-a82c-73cec22aed0d"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Prueba}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="243" y="85" width="140" height="30" uuid="20a67ef3-4ff5-4033-a171-fb1344943051"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Rama}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="133" y="20" width="100" height="30" uuid="0524a932-1763-4f50-b12e-09fbb26be7de"/>
+				<textElement textAlignment="Right">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Deporte:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="133" y="52" width="100" height="30" uuid="caecb74c-ffd1-40ca-93a9-37d11ed7baf1"/>
+				<textElement textAlignment="Right">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Prueba:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="133" y="85" width="100" height="30" uuid="2eb79973-729c-435f-8315-96e83f0220a7"/>
+				<textElement textAlignment="Right">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Rama:]]></text>
+			</staticText>
+		</band>
+		<band height="66">
+			<subreport>
+				<reportElement x="0" y="31" width="536" height="30" uuid="2fd4eb0d-b578-48b7-b734-a410c2affe66"/>
+				<subreportParameter name="DeporteId">
+					<subreportParameterExpression><![CDATA[$P{DeporteId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="EventoId">
+					<subreportParameterExpression><![CDATA[$P{EventoId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="ParametroRamaId">
+					<subreportParameterExpression><![CDATA[$P{ParametroRamaId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PruebaId">
+					<subreportParameterExpression><![CDATA[$P{PruebaId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="UrlImages">
+					<subreportParameterExpression><![CDATA[$P{UrlImages}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["Reportes/rptPodiosResumen/srptPodio.jrxml"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement x="181" y="0" width="150" height="31" uuid="5648e58c-c739-44a2-99dd-a4fcb60c98ec"/>
+				<textElement textAlignment="Center">
+					<font fontName="VerdanaReports" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Podio]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="89" splitType="Stretch">
+			<subreport isUsingCache="true" overflowType="NoStretch">
+				<reportElement x="0" y="0" width="536" height="89" uuid="8fb37dd2-b871-49b8-ad76-d3dbb40613da">
+					<property name="com.jaspersoft.studio.unit.height" value="cm"/>
+				</reportElement>
+				<subreportParameter name="CronogramaId">
+					<subreportParameterExpression><![CDATA[$P{CronogramaId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="EventoId">
+					<subreportParameterExpression><![CDATA[$P{EventoId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="ReporteId">
+					<subreportParameterExpression><![CDATA[$P{ReporteId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="NombreSistema">
+					<subreportParameterExpression><![CDATA[$P{NombreSistema}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["Resources/Template/Footer.jrxml"]]></subreportExpression>
+			</subreport>
+		</band>
+	</pageFooter>
+</jasperReport>

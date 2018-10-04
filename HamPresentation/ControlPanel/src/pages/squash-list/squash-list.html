@@ -1,0 +1,61 @@
+<!--
+  Generated template for the SquashListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+      <ion-buttons start>
+          <button ion-button icon-only color="dark" (click)="recargarDatos()">
+            <ion-icon name="refresh-circle"></ion-icon>
+          </button>
+          <button end ion-button icon-only color="dark" (click)="openConfig()">
+            <ion-icon name="settings"></ion-icon>
+          </button>
+      </ion-buttons>
+    <ion-title>Cronograma <label>{{deporte}}</label></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-label>Fecha</ion-label>
+    <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="fechaCronograma" (ionChange)="onChangeFecha()"></ion-datetime>
+  </ion-item>
+
+  <ion-scroll scrollX="true"></ion-scroll>
+  <ion-list no-padding>
+    <ion-list-header>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-1>Hora</ion-col>
+          <ion-col col-1>Genero</ion-col>
+          <ion-col col-2>Prueba</ion-col>
+          <ion-col col-2>Equipo A</ion-col>
+          <ion-col col-2>Equipo B</ion-col>
+          <ion-col col-2>Escenario</ion-col>
+          <ion-col col-1>Estado</ion-col>
+          <ion-col col-1>Resultado</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-list-header>
+    <ion-grid>
+      <button ion-item *ngFor="let item of dataCronograma" (click)="itemSelected(item)">
+        <ion-row>
+          <ion-col col-1 ion-text><ion-icon name="{{item.EstadoLista===true?'checkmark-circle':'calendar'}}" [style.color]="item.EstadoLista===true?'green':'red'"></ion-icon>&nbsp;&nbsp;{{ item.Hora }}</ion-col>
+          <ion-col col-1 ion-text>{{item.Genero}}</ion-col>
+          <ion-col col-2 text-wrap ion-text>{{item.Prueba}}</ion-col>
+          <ion-col col-2 text-wrap ion-text>{{item.EquipoA}}</ion-col>
+          <ion-col col-2 text-wrap ion-text >{{item.EquipoB}}</ion-col>
+          <ion-col col-2 text-wrap ion-text >{{item.Instalacion}}</ion-col>
+          <ion-col col-1 ion-text>{{item.Estado}}</ion-col>
+          <ion-col col-1 ion-text class="rigth">{{item.Puntuacion}}</ion-col>
+        </ion-row>
+      </button>
+    </ion-grid>
+  </ion-list>
+</ion-content>

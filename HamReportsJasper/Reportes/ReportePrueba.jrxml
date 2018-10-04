@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.0.final using JasperReports Library version 6.4.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReportePrueba" pageWidth="612" pageHeight="792" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" whenResourceMissingType="Error" uuid="d28c8008-121f-402a-a886-2a39e78dace2">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.unit." value="cm"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="cm"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SQLDeportes"/>
+	<parameter name="EventoId" class="java.lang.String"/>
+	<parameter name="ReporteId" class="java.lang.String"/>
+	<parameter name="CronogramaId" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[EXEC	 [prog].[pGetCronograma]
+		@EventoId = 1,
+		@DelegacionId = 2,
+		@DeporteId = 4,
+		@Fecha = NULL
+]]>
+	</queryString>
+	<field name="CronogramaId" class="java.lang.Integer"/>
+	<field name="Fecha" class="java.sql.Date"/>
+	<field name="HoraProgramada" class="java.sql.Time"/>
+	<field name="HoraInicio" class="java.sql.Time"/>
+	<field name="HoraFin" class="java.sql.Time"/>
+	<field name="DeporteId" class="java.lang.Integer"/>
+	<field name="Deporte" class="java.lang.String"/>
+	<field name="PruebaId" class="java.lang.Integer"/>
+	<field name="Prueba" class="java.lang.String"/>
+	<field name="Rama" class="java.lang.String"/>
+	<field name="Fase" class="java.lang.String"/>
+	<field name="Estado" class="java.lang.String"/>
+	<field name="InstalacionId" class="java.lang.Integer"/>
+	<field name="Instalacion" class="java.lang.String"/>
+	<field name="DelegacionId" class="java.lang.Integer"/>
+	<field name="Equipo_A" class="java.lang.String"/>
+	<field name="Equipo_B" class="java.lang.String"/>
+	<field name="MarcadorEquipoA" class="java.lang.Double"/>
+	<field name="MarcadorEquipoB" class="java.lang.Double"/>
+	<pageHeader>
+		<band height="85" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="cm"/>
+			<subreport isUsingCache="false" runToBottom="false">
+				<reportElement x="-1" y="0" width="570" height="85" uuid="d89243a0-b81c-45f9-b49c-43b041461f48"/>
+				<subreportParameter name="EventoId">
+					<subreportParameterExpression><![CDATA[$P{EventoId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="CronogramaId">
+					<subreportParameterExpression><![CDATA[$F{CronogramaId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="ReporteId">
+					<subreportParameterExpression><![CDATA[$P{ReporteId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["Template/Header.jrxml"]]></subreportExpression>
+			</subreport>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="85"/>
+	</detail>
+	<pageFooter>
+		<band height="70" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="0" width="570" height="70" uuid="8fb37dd2-b871-49b8-ad76-d3dbb40613da"/>
+				<subreportParameter name="CronogramaId">
+					<subreportParameterExpression><![CDATA[$P{CronogramaId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="EventoId">
+					<subreportParameterExpression><![CDATA[$P{EventoId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="ReporteId">
+					<subreportParameterExpression><![CDATA[$P{ReporteId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["Template/Footer.jrxml"]]></subreportExpression>
+			</subreport>
+		</band>
+	</pageFooter>
+</jasperReport>

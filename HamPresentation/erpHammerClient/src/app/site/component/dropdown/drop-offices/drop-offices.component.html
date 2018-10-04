@@ -1,0 +1,3 @@
+<div id="ladiv">{{this.LabelText}}:</div>       
+<p-dropdown [options]="offices"  placeholder="Seleccione {{this.LabelText}}"  optionLabel="Name" [disabled]="disable"
+ [style]="{'width':'250px'}" (onChange)="onChangeParameter($event)" [filter]="Filter"></p-dropdown> 

@@ -1,0 +1,39 @@
+boton {
+  .button-inner {
+    font-size: 3.5vw;
+    text-transform: uppercase;
+    padding: 10px;
+    text-shadow: 1px 2px #424141;
+    font-family: 'Hammer', sans-serif;
+  }
+
+
+    .img {
+      position: relative;
+      right: 10px;
+      max-width: 4.5vw !important;
+    }
+
+
+  .alto {
+    height: 7vw;
+    width: 25vw;
+  }
+  .alto_menos {
+    height: 7vw;
+    background-color: #000;
+    color: white;
+    font-size: 4vw;
+    width: 10vw;
+    border: 1px solid #222;
+  }
+  .alto_mas{
+    height: 7vw;
+    background-color: white;
+    color: black;
+    font-size: 4vw;
+    width: 10vw;
+    border: 1px solid black;
+  }
+}
+

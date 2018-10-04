@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.0.final using JasperReports Library version 6.4.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="srptEstadistico" pageWidth="425" pageHeight="283" columnWidth="425" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="fda8e0c4-6df6-4cb2-b326-00313d254e40">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SQLDeportes"/>
+	<property name="com.jaspersoft.studio.unit." value="cm"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="cm"/>
+	<template><![CDATA["Resources/Styles/style_basic.jrtx"]]></template>
+	<parameter name="CronogramaId" class="java.lang.String"/>
+	<parameter name="EquipoA" class="java.lang.String"/>
+	<parameter name="EquipoB" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[EXEC   [conj].[pGetResultadosFutbolRpt]
+  @CronogramaId =  $P{CronogramaId}]]>
+	</queryString>
+	<field name="ParametroSucesoId" class="java.lang.Integer"/>
+	<field name="Parametro" class="java.lang.String"/>
+	<field name="1" class="java.lang.Integer"/>
+	<field name="2" class="java.lang.Integer"/>
+	<columnHeader>
+		<band height="16">
+			<textField>
+				<reportElement style="Text10" x="0" y="0" width="85" height="16" uuid="54eefbdd-e7c4-47c5-afb4-8213417f61af"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$P{EquipoA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Text10" x="339" y="0" width="86" height="16" uuid="8f8bb57f-858b-4aaa-b571-5762beceda67"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$P{EquipoB}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="13" splitType="Stretch">
+			<textField>
+				<reportElement style="Text10" x="0" y="0" width="85" height="13" uuid="895a3e9f-d1b8-4b2c-8b7c-485bb6acbceb">
+					<property name="com.jaspersoft.studio.unit.width" value="cm"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{1}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Text10" x="85" y="0" width="254" height="13" uuid="f1c0b3c8-9da5-44c0-b488-19a38be830aa"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Parametro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Text10" x="339" y="0" width="86" height="13" uuid="81df54c1-f357-458f-a3c1-7bac5f47f743">
+					<property name="com.jaspersoft.studio.unit.width" value="cm"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{2}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

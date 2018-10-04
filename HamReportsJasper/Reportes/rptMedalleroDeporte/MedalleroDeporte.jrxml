@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.0.final using JasperReports Library version 6.4.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="MedalleroDeporte" pageWidth="612" pageHeight="792" whenNoDataType="NoPages" columnWidth="536" leftMargin="56" rightMargin="20" topMargin="20" bottomMargin="20" whenResourceMissingType="Error" uuid="d28c8008-121f-402a-a886-2a39e78dace2">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.unit." value="cm"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SQLDeportes"/>
+	<property name="ireport.jasperserver.url" value="http://pluris2017.mindeportes.gob.bo:8080/jasperserver/"/>
+	<property name="ireport.jasperserver.user" value="jasperadmin"/>
+	<property name="ireport.jasperserver.reportUnit" value="/Reports/Hammer/rptMedalleroDeporte"/>
+	<property name="ireport.jasperserver.report.resource" value="/Reports/Hammer/rptMedalleroDeporte_files/main_jrxml"/>
+	<template><![CDATA["Resources/Styles/style_basic.jrtx"]]></template>
+	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#9FA3A6">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="TableMedalleroDeporte" uuid="61c566f8-b388-4fb9-b36b-2a561197d19e">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SQLDeportes"/>
+		<parameter name="EventoId" class="java.lang.String"/>
+		<parameter name="DeporteId" class="java.lang.String"/>
+		<parameter name="PruebaId" class="java.lang.String"/>
+		<parameter name="ParametroRamaId" class="java.lang.String"/>
+		<queryString language="SQL">
+			<![CDATA[EXEC	 [prog].[pGetMedalleroDeporte]
+		@EventoId =  $P{EventoId}  ,
+		@DeporteId =   $P{DeporteId} ,
+		@PruebaId =    $P{PruebaId} ,
+		@ParametroRamaId =   $P{ParametroRamaId}]]>
+		</queryString>
+		<field name="Nro" class="java.lang.Long"/>
+		<field name="Nombre" class="java.lang.String"/>
+		<field name="ORO" class="java.lang.Integer"/>
+		<field name="PLATA" class="java.lang.Integer"/>
+		<field name="BRONCE" class="java.lang.Integer"/>
+		<field name="Total" class="java.lang.Integer"/>
+		<group name="Nro">
+			<groupExpression><![CDATA[$F{Nro}]]></groupExpression>
+		</group>
+		<group name="Nombre">
+			<groupExpression><![CDATA[$F{Nombre}]]></groupExpression>
+		</group>
+		<group name="ORO">
+			<groupExpression><![CDATA[$F{ORO}]]></groupExpression>
+		</group>
+		<group name="PLATA">
+			<groupExpression><![CDATA[$F{PLATA}]]></groupExpression>
+		</group>
+		<group name="BRONCE">
+			<groupExpression><![CDATA[$F{BRONCE}]]></groupExpression>
+		</group>
+		<group name="Total">
+			<groupExpression><![CDATA[$F{Total}]]></groupExpression>
+		</group>
+	</subDataset>
+	<parameter name="EventoId" class="java.lang.String">
+		<defaultValueExpression><![CDATA["1"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="ReporteId" class="java.lang.String">
+		<defaultValueExpression><![CDATA["7"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="NombreSistema" class="java.lang.String">
+		<defaultValueExpression><![CDATA["Resultados provistos por Hammer"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="UrlImages" class="java.lang.String">
+		<defaultValueExpression><![CDATA["C:/HammerResources/Images/Logos"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="DeporteId" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[EXEC	  [rpt].[pGetMedalleroDeporte]
+		@EventoId =  $P{EventoId} ,
+	    @DeporteId =  $P{DeporteId} ,
+	    @ReporteId =  $P{ReporteId}]]>
+	</queryString>
+	<field name="EventoId" class="java.lang.Integer"/>
+	<field name="Nombre" class="java.lang.String"/>
+	<field name="Version" class="java.lang.String"/>
+	<field name="Detalle" class="java.lang.String"/>
+	<field name="Titulo" class="java.lang.String"/>
+	<field name="Deporte" class="java.lang.String"/>
+	<field name="Prueba" class="java.lang.String"/>
+	<field name="Categoria" class="java.lang.String"/>
+	<field name="Direccion" class="java.lang.String"/>
+	<field name="Instalacion" class="java.lang.String"/>
+	<field name="DeporteId" class="java.lang.Integer"/>
+	<field name="PruebaId" class="java.lang.Integer"/>
+	<field name="ParametroRamaId" class="java.lang.Integer"/>
+	<pageHeader>
+		<band height="105" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="cm"/>
+			<subreport isUsingCache="false">
+				<reportElement x="0" y="0" width="540" height="105" uuid="e679d3c5-e17e-48e6-8b4b-e36d38c2a4c7"/>
+				<subreportParameter name="DeporteId">
+					<subreportParameterExpression><![CDATA[$P{DeporteId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="Deporte">
+					<subreportParameterExpression><![CDATA[$F{Deporte}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="Direccion">
+					<subreportParameterExpression><![CDATA[$F{Direccion}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="EventoId">
+					<subreportParameterExpression><![CDATA[$P{EventoId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="Instalacion">
+					<subreportParameterExpression><![CDATA[$F{Instalacion}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="NombreReporte">
+					<subreportParameterExpression><![CDATA[$F{Detalle}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="UrlImages">
+					<subreportParameterExpression><![CDATA[$P{UrlImages}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="ReporteId">
+					<subreportParameterExpression><![CDATA[$P{ReporteId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["Resources/Template/HeaderSimple.jrxml"]]></subreportExpression>
+			</subreport>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="241">
+			<textField>
+				<reportElement x="259" y="40" width="200" height="20" uuid="4c229a70-3743-4a3a-8e2e-24a4f7cf8238"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Verdana" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Deporte}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="50" y="10" width="410" height="30" uuid="c5b90c11-c0b7-4132-8a6a-ea50283a41fc"/>
+				<textElement textAlignment="Center">
+					<font fontName="Verdana" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MEDALLERO POR DEPORTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="40" width="190" height="20" uuid="216dd97a-7cb0-4214-ae86-af1253afe395"/>
+				<textElement textAlignment="Right">
+					<font fontName="Verdana" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Deporte:]]></text>
+			</staticText>
+			<componentElement>
+				<reportElement x="50" y="110" width="200" height="85" uuid="0ad0685e-925c-4eb7-bb2c-ad251603d15a">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.table.name" value=""/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="TableMedalleroDeporte" uuid="b884ee05-a408-400e-8c51-e8af0536f278">
+						<datasetParameter name="EventoId">
+							<datasetParameterExpression><![CDATA[$F{EventoId}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="DeporteId">
+							<datasetParameterExpression><![CDATA[$F{DeporteId}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="PruebaId">
+							<datasetParameterExpression><![CDATA[0]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="ParametroRamaId">
+							<datasetParameterExpression><![CDATA[0]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="44" uuid="222143b0-7143-4104-8aae-ca8448f8afd2">
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement key="" x="0" y="0" width="44" height="30" forecolor="#FFFFFF" uuid="0931f0ec-a822-4284-82b4-f5b598e70c72"/>
+								<textElement textAlignment="Center">
+									<font fontName="Verdana" size="12" isBold="true"/>
+									<paragraph lineSpacing="1_1_2"/>
+								</textElement>
+								<text><![CDATA[NRO.]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="44" height="30" uuid="1e5254d3-9db1-473d-bc98-6265df574548"/>
+								<textElement textAlignment="Center">
+									<font fontName="Verdana" size="11"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{Nro}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="115" uuid="cdcd66b2-eda2-4431-9bc9-52d480a19f63">
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement key="" x="0" y="0" width="115" height="30" forecolor="#FFFFFF" uuid="cc7b1f68-1922-4450-a1dc-80957e17eb85"/>
+								<textElement textAlignment="Center">
+									<font fontName="Verdana" size="12" isBold="true"/>
+									<paragraph lineSpacing="Proportional"/>
+								</textElement>
+								<text><![CDATA[NOMBRE]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="115" height="30" uuid="81a691b1-171a-45ba-87eb-0b90b837bfda"/>
+								<textElement>
+									<font fontName="Verdana" size="11"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{Nombre}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="60" uuid="881d1a79-236f-4c59-9d74-6c760324439f">
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement key="" x="0" y="0" width="60" height="30" forecolor="#FFFFFF" uuid="81d66fcd-7731-469c-be39-1f2d9a739d78"/>
+								<textElement textAlignment="Center">
+									<font fontName="Verdana" size="12" isBold="true"/>
+									<paragraph lineSpacing="1_1_2"/>
+								</textElement>
+								<text><![CDATA[ORO]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="60" height="30" uuid="9876f68f-8c41-4b77-91c7-7b6e8dd189e8"/>
+								<textElement textAlignment="Center">
+									<font fontName="Verdana" size="11"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{ORO}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="60" uuid="d7f7e7aa-d111-4779-98c8-ac0054711392">
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement key="" x="0" y="0" width="60" height="30" forecolor="#FFFFFF" uuid="fb9df8d4-0fca-4df2-930b-9b1267bf6ef5"/>
+								<textElement textAlignment="Center">
+									<font fontName="Verdana" size="12" isBold="true"/>
+									<paragraph lineSpacing="1_1_2"/>
+								</textElement>
+								<text><![CDATA[PLATA]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="60" height="30" uuid="1ae29a74-fb2a-4a3c-8f34-afce4b14c04e"/>
+								<textElement textAlignment="Center">
+									<font fontName="Verdana" size="11"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{PLATA}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="62" uuid="f73c0e34-3b43-4a09-a6b3-81da373cd933">
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement key="" x="0" y="0" width="62" height="30" forecolor="#FFFFFF" uuid="3116af4c-fe01-408e-a010-4ccbc975ff08"/>
+								<textElement textAlignment="Center">
+									<font fontName="Verdana" size="12" isBold="true"/>
+									<paragraph lineSpacing="1_1_2"/>
+								</textElement>
+								<text><![CDATA[BRONCE]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="62" height="30" uuid="4dc443d7-e6e6-4b78-8d2d-a494e6f1c84b"/>
+								<textElement textAlignment="Center">
+									<font fontName="Verdana" size="11"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{BRONCE}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="59" uuid="62d47330-1fba-430f-a5bf-7c65e19ba820">
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement key="" x="0" y="0" width="59" height="30" forecolor="#FFFFFF" backcolor="#FFFFFF" uuid="8da0a46b-5037-4712-9e16-3d7c4e75ecdc"/>
+								<textElement textAlignment="Center">
+									<font fontName="Verdana" size="12" isBold="true"/>
+									<paragraph lineSpacing="Proportional"/>
+								</textElement>
+								<text><![CDATA[TOTAL]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="59" height="30" uuid="67df236b-30a6-40a1-8548-191ee0add220"/>
+								<textElement textAlignment="Center">
+									<font fontName="Verdana" size="11"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{Total}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="94" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="0" width="540" height="89" uuid="abd6f1f7-9b68-4709-8d65-d7917761fa8b"/>
+				<subreportParameter name="CronogramaId">
+					<subreportParameterExpression><![CDATA["1"]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="EventoId">
+					<subreportParameterExpression><![CDATA[$P{EventoId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="NombreSistema">
+					<subreportParameterExpression><![CDATA[$P{NombreSistema}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="ReporteId">
+					<subreportParameterExpression><![CDATA[$P{ReporteId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["Resources/Template/FooterSimple.jrxml"]]></subreportExpression>
+			</subreport>
+		</band>
+	</pageFooter>
+</jasperReport>

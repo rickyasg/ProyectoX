@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>HamReportsJasper</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>net.sf.jasperreports.builder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.babel.editor.rbeBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+		<nature>net.sf.jasperreports.nature</nature>
+		<nature>com.jaspersoft.studio.babel.editor.rbeNature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>Resources/LogoDeportes/1_5.png</name>
+			<type>1</type>
+			<location>C:/HammerResources/Images/Logos/1_5.png</location>
+		</link>
+	</linkedResources>
+</projectDescription>

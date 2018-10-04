@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.0.final using JasperReports Library version 6.4.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Template_Header" pageWidth="612" pageHeight="792" columnWidth="527" leftMargin="0" rightMargin="85" topMargin="0" bottomMargin="0" uuid="6c448989-7a6b-4c3f-b20e-f71115e2699b">
+	<property name="com.jaspersoft.studio.unit." value="cm"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SQLDeportes"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<template><![CDATA["Resources/Styles/style_basic.jrtx"]]></template>
+	<parameter name="EventoId" class="java.lang.String"/>
+	<parameter name="CronogramaId" class="java.lang.String">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<parameter name="ReporteId" class="java.lang.String"/>
+	<parameter name="UrlImages" class="java.lang.String">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+		<defaultValueExpression><![CDATA["C:/HammerResources/Logs"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[EXEC	[rpt].[pGetHeaderFooter]
+		@CronogramaId =   $P{CronogramaId} ,
+		@EventoId = $P{EventoId} ,
+		@ReporteId =  $P{ReporteId}]]>
+	</queryString>
+	<field name="CronogramaId" class="java.lang.Integer"/>
+	<field name="Fecha" class="java.sql.Date"/>
+	<field name="HoraProgramada" class="java.sql.Time"/>
+	<field name="HoraInicio" class="java.sql.Time"/>
+	<field name="HoraFin" class="java.sql.Time"/>
+	<field name="Instalacion" class="java.lang.String"/>
+	<field name="Codigo" class="java.lang.String"/>
+	<field name="Direccion" class="java.lang.String"/>
+	<field name="Fase" class="java.lang.String"/>
+	<field name="Rama" class="java.lang.String"/>
+	<field name="Prueba" class="java.lang.String"/>
+	<field name="Deporte" class="java.lang.String"/>
+	<field name="CodigoDeporte" class="java.lang.String"/>
+	<field name="RptNombre" class="java.lang.String"/>
+	<field name="RptAbreviatura" class="java.lang.String"/>
+	<field name="EventoId" class="java.lang.Integer"/>
+	<field name="DeporteId" class="java.lang.Integer"/>
+	<pageHeader>
+		<band height="71" splitType="Stretch">
+			<image hAlign="Center" vAlign="Middle" isUsingCache="false">
+				<reportElement x="0" y="0" width="88" height="67" uuid="fc25f16f-1581-4716-a18e-d23d64044b2b"/>
+				<imageExpression><![CDATA[new File($P{UrlImages}+"/Lg"+$F{EventoId}+".png")]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement style="Title11" stretchType="RelativeToBandHeight" x="88" y="0" width="212" height="18" uuid="2c046eec-cd23-4b01-bc97-eb3b7c11300f"/>
+				<textElement textAlignment="Left">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Instalacion}+"("+$F{Codigo}+")"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Text9" x="88" y="20" width="162" height="16" uuid="71c3f0e1-b7f2-4309-a1d5-9a35ca24fe0c">
+					<property name="com.jaspersoft.studio.unit.height" value="cm"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Bottom">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Direccion}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="MMM d, yyyy" isBlankWhenNull="true">
+				<reportElement style="Text9" x="88" y="36" width="82" height="14" uuid="429dc45f-1608-488c-b530-e7b4b5ee6361"/>
+				<textFieldExpression><![CDATA[$F{Fecha}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="h:mm a" isBlankWhenNull="true">
+				<reportElement style="Text9" x="88" y="50" width="52" height="15" uuid="868e2fec-65c6-4dd3-94d7-1ca75f1db548"/>
+				<textFieldExpression><![CDATA[$F{HoraProgramada}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Title11" stretchType="ElementGroupHeight" x="179" y="1" width="273" height="18" uuid="4b61de87-8e73-4805-bc83-9894d0394501"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{Deporte} +"("+$F{CodigoDeporte}+")"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Text9" stretchType="ElementGroupHeight" x="335" y="19" width="110" height="12" uuid="6d75da52-8e94-4939-8b4d-c1a4a3e8d70b"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{Rama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Text9" stretchType="ElementGroupHeight" x="280" y="33" width="165" height="12" uuid="697fb02f-d4b9-47b5-a7ef-a428df8e0922"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{Prueba}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Text9" stretchType="ElementGroupHeight" x="363" y="47" width="82" height="12" uuid="6eda31b8-4de0-4029-b841-dd2535572755"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{Fase}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Title11" x="150" y="36" width="213" height="31" uuid="1ab91f5e-7071-4676-844a-c6366c93b4c8"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{RptNombre}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement key="" x="0" y="70" width="526" height="1" forecolor="#666262" uuid="9b653b24-1c79-4ce5-80c2-b3429c9df697">
+					<property name="com.jaspersoft.studio.unit.height" value="cm"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<image scaleImage="FillFrame" hAlign="Center">
+				<reportElement x="456" y="0" width="63" height="67" uuid="58827aeb-1723-4d08-93f9-70fee21eebc5"/>
+				<imageExpression><![CDATA[new File($P{UrlImages}+"/"+$F{EventoId}+"_"+$F{DeporteId}+".png")]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+</jasperReport>

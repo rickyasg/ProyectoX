@@ -1,0 +1,255 @@
+﻿{
+  "TOC": {
+    "Menus": {
+      "Menu": [
+        {
+          "Text": "Recursos Humanos",
+          "Icon": "fa-users",
+          "Facility": [
+            {
+              "Text": "Personal",
+              "ToolTip": "Listado de Personal",
+              "System": "RecursosHumanos",
+              "Facility": "ListadoPersonal",
+              "Params": "tarjeta=false&activos=false"
+            },
+            {
+              "Text": "Hoja de Tiempos",
+              "ToolTip": "Lista de Hojas",
+              "System": "RecursosHumanos",
+              "Facility": "AdminHojasTiempos",
+              "Params": "OficinaId=2&IsAdmin="
+            },
+            {
+              "Text": "Permisos",
+              "ToolTip": "Administración de Permisos",
+              "System": "RecursosHumanos",
+              "Facility": "AprobacionPermisos"
+            }
+          ]
+        },
+        {
+          "Text": "Correspondencia",
+          "Icon": "fa-envelope-o",
+          "Facility": [
+            {
+              "Text": "Registro Correspondencia",
+              "ToolTip": "Registro Correspondencia",
+              "System": "aCorrespondencia",
+              "Facility": "DetalleBandejas",
+              "Params": "UbicacionId=1&TipoUsuarioId=1"
+            },
+            {
+              "Text": "Mi Correspondencia",
+              "ToolTip": "Mi Correspondencia",
+              "System": "aCorrespondencia",
+              "Facility": "MiCorrespondencia",
+              "Params": "UbicacionId=1"
+            }
+          ]
+        },
+        {
+          "Text": "Activos Fijos",
+          "Icon": "fa-clipboard",
+          "Facility": {
+            "Text": "Generador de Etiquetas",
+            "ToolTip": "Generador de Etiquetas",
+            "System": "ActivosFijos",
+            "Facility": "GeneradorEtiquetas"
+          }
+        },
+        {
+          "Text": "Presupuestos",
+          "Icon": "fa-money",
+          "Facility": [
+            {
+              "Text": "Todos",
+              "ToolTip": "Plan Operativo Anual",
+              "System": "Presupuestos",
+              "Facility": "ListadoPresupuestos",
+              "Params": "OficinaId=0"
+            },
+            {
+              "Text": "Dirección General",
+              "ToolTip": "Plan Operativo Anual",
+              "System": "Presupuestos",
+              "Facility": "ListadoPresupuestos",
+              "Params": "OficinaId=11"
+            },
+            {
+              "Text": "Administrativa Financiera",
+              "ToolTip": "Plan Operativo Anual",
+              "System": "Presupuestos",
+              "Facility": "ListadoPresupuestos",
+              "Params": "OficinaId=3"
+            },
+            {
+              "Text": "Comunicación y Marketing",
+              "ToolTip": "Plan Operativo Anual",
+              "System": "Presupuestos",
+              "Facility": "ListadoPresupuestos",
+              "Params": "OficinaId=8"
+            },
+            {
+              "Text": "Infraestructura",
+              "ToolTip": "Plan Operativo Anual",
+              "System": "Presupuestos",
+              "Facility": "ListadoPresupuestos",
+              "Params": "OficinaId=7"
+            },
+            {
+              "Text": "Jurídica",
+              "ToolTip": "Plan Operativo Anual",
+              "System": "Presupuestos",
+              "Facility": "ListadoPresupuestos",
+              "Params": "OficinaId=4"
+            },
+            {
+              "Text": "Logística",
+              "ToolTip": "Plan Operativo Anual",
+              "System": "Presupuestos",
+              "Facility": "ListadoPresupuestos",
+              "Params": "OficinaId=5"
+            },
+            {
+              "Text": "Protocolo y Ceremonial",
+              "ToolTip": "Plan Operativo Anual",
+              "System": "Presupuestos",
+              "Facility": "ListadoPresupuestos",
+              "Params": "OficinaId=9"
+            },
+            {
+              "Text": "Servicios Medicos",
+              "ToolTip": "Plan Operativo Anual",
+              "System": "Presupuestos",
+              "Facility": "ListadoPresupuestos",
+              "Params": "OficinaId=10"
+            },
+            {
+              "Text": "Técnica Deportiva",
+              "ToolTip": "Plan Operativo Anual",
+              "System": "Presupuestos",
+              "Facility": "ListadoPresupuestos",
+              "Params": "OficinaId=6"
+            },
+            {
+              "Text": "Tecnología de Información",
+              "ToolTip": "Plan Operativo Anual",
+              "System": "Presupuestos",
+              "Facility": "ListadoPresupuestos",
+              "Params": "OficinaId=2"
+            }
+          ]
+        },
+        {
+          "Text": "Planificacion",
+          "Icon": "fa-bar-chart",
+          "Facility": [
+            {
+              "Text": "Actividades",
+              "ToolTip": "Plan Operativo Anual",
+              "System": "Cronograma",
+              "Facility": "ListadoCronograma"
+            },
+            {
+              "Text": "Objetivos",
+              "ToolTip": "Lista de Objetivos",
+              "System": "Planificacion",
+              "Facility": "ListadoObjetivos",
+              "Params": "OficinaId=0"
+            }
+          ]
+        },
+        {
+          "Text": "Infraestructura",
+          "Icon": "fa-building",
+          "Facility": {
+            "Text": "Supervisión",
+            "ToolTip": "Lista de Infraestructuras",
+            "System": "Infraestructura",
+            "Facility": "ListaInfraestructura"
+          }
+        },
+        {
+          "Text": "Vehiculos",
+          "Icon": "fa-car",
+          "Facility": {
+            "Text": "Combustible",
+            "ToolTip": "Listado de Boletas",
+            "System": "Vehiculos",
+            "Facility": "ListaVehiculos"
+          }
+        },
+        {
+          "Text": "Compras",
+          "Icon": "fa-shopping-cart",
+          "Facility": {
+            "Text": "Procesos",
+            "ToolTip": "Procesos de Compras",
+            "System": "Compras",
+            "Facility": "Procesos",
+            "Params": "OficinaId=2"
+          }
+        },
+        {
+          "Text": "Eventos",
+          "Icon": "fa-bookmark",
+          "Facility": {
+            "Text": "Listado de Eventos",
+            "ToolTip": "Listado de Eventos",
+            "System": "Eventos",
+            "Facility": "ListadoEventos"
+          }
+        },
+        {
+          "Text": "Administración Web",
+          "Icon": "fa-cogs",
+          "Facility": {
+            "Text": "Noticias",
+            "ToolTip": "Administrador de Noticias",
+            "System": "AdministradorWeb",
+            "Facility": "ListadoNoticias"
+          }
+        },
+        {
+          "Text": "Almacenes",
+          "Icon": "fa-cogs",
+          "Facility": [
+            {
+              "Text": "Categorias",
+              "ToolTip": "Lista de Categorias",
+              "System": "Almacen",
+              "Facility": "ParametrosAlmacen"
+            },
+            {
+              "Text": "Nomenclatura",
+              "ToolTip": "Lista de Nomenclatura",
+              "System": "Almacen",
+              "Facility": "Nomenclatura"
+            }
+          ]
+        },
+        {
+          "Text": "Almacenes-Nomenclatura",
+          "Icon": "fa-cogs",
+          "Facility": {
+            "Text": "Nomenclatura",
+            "ToolTip": "Lista de Nomenclatura",
+            "System": "Almacen",
+            "Facility": "Nomenclatura"
+          }
+        },
+        {
+          "Text": "Config",
+          "Icon": "fa-cogs",
+          "Facility": {
+            "Text": "Usuarios",
+            "ToolTip": "Lista de Usuarios",
+            "System": "Administracion",
+            "Facility": "ListaUsuarios"
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.0.final using JasperReports Library version 6.4.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="srptSuplentes" pageWidth="255" pageHeight="792" columnWidth="255" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="fda8e0c4-6df6-4cb2-b326-00313d254e40">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SQLDeportes"/>
+	<property name="com.jaspersoft.studio.unit." value="cm"/>
+	<template><![CDATA["Resources/Styles/style_basic.jrtx"]]></template>
+	<parameter name="CronogramaId" class="java.lang.String"/>
+	<parameter name="CompetidorId" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM [conj].[fGetPlanillaFutbolSala] ( $P{CronogramaId} , $P{CompetidorId} , 2 )
+order by Posicion desc]]>
+	</queryString>
+	<field name="NumeroCamiseta" class="java.lang.String"/>
+	<field name="Posicion" class="java.lang.String"/>
+	<field name="NombreJugador" class="java.lang.String"/>
+	<detail>
+		<band height="13" splitType="Stretch">
+			<textField>
+				<reportElement key="" style="Text10" x="0" y="0" width="28" height="13" uuid="0dc9513c-0138-4da2-a015-6a63199c71ae"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NumeroCamiseta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Text10" x="28" y="0" width="40" height="13" uuid="895a3e9f-d1b8-4b2c-8b7c-485bb6acbceb"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Posicion}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Text10" x="68" y="0" width="170" height="13" uuid="f1c0b3c8-9da5-44c0-b488-19a38be830aa"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NombreJugador}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

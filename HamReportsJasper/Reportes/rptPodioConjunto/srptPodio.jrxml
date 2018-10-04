@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.0.final using JasperReports Library version 6.4.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="srptPodio" pageWidth="612" pageHeight="792" columnWidth="612" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" whenResourceMissingType="Key" uuid="004fed0a-ffeb-426c-b5c7-473832cb183b">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SQLDeportes"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.unit." value="cm"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="cm"/>
+	<parameter name="EventoId" class="java.lang.String">
+		<defaultValueExpression><![CDATA["1"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="DeporteId" class="java.lang.String">
+		<defaultValueExpression><![CDATA["2"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PruebaId" class="java.lang.String">
+		<defaultValueExpression><![CDATA["0"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="ParametroRamaId" class="java.lang.String">
+		<defaultValueExpression><![CDATA["0"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="UrlImages" class="java.lang.String">
+		<defaultValueExpression><![CDATA["C:/HammerResources/Images/Logos"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[EXEC   [prog].[pGetPodios]
+		@EventoId =  $P{EventoId} ,
+		@DeporteId = $P{DeporteId} ,
+		@PruebaId = $P{PruebaId}  ,
+		@ParametroRamaId =  $P{ParametroRamaId}]]>
+	</queryString>
+	<field name="PruebaEventoId" class="java.lang.Integer"/>
+	<field name="Fecha" class="java.sql.Date"/>
+	<field name="HoraProgramada" class="java.sql.Time"/>
+	<field name="Deporte" class="java.lang.String"/>
+	<field name="Prueba" class="java.lang.String"/>
+	<field name="RamaDeporte" class="java.lang.String"/>
+	<field name="Marca" class="java.lang.String"/>
+	<field name="Puntaje" class="java.lang.String"/>
+	<field name="Tiempo" class="java.lang.String"/>
+	<field name="Equipo" class="java.lang.String"/>
+	<field name="Delegacion" class="java.lang.String"/>
+	<field name="Medalla" class="java.lang.String"/>
+	<field name="ParametroMedallaId" class="java.lang.Integer"/>
+	<field name="Representacion" class="java.lang.String"/>
+	<field name="FotoUrl" class="java.lang.String"/>
+	<field name="DelegacionId" class="java.lang.String"/>
+	<detail>
+		<band height="71" splitType="Stretch">
+			<frame>
+				<reportElement x="138" y="0" width="362" height="20" uuid="013deeac-85e8-45b0-a95c-a8c1630c6be1">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+				</reportElement>
+				<textField>
+					<reportElement x="0" y="0" width="362" height="20" uuid="546da3ca-4abc-4e29-afd2-b88c1401f740"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="VerdanaReports" size="11" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{Equipo}+" ("+$F{Representacion}+")"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<textField>
+				<reportElement x="50" y="52" width="88" height="18" uuid="46fd047b-39f8-4191-aa8f-882ddb517632"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="VerdanaReports" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Medalla}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="-1" y="70" width="500" height="1" uuid="f7041c69-aea9-49f1-97c6-6c578f507052">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="138" y="20" width="212" height="16" uuid="fd4855cd-30e2-4b23-8051-f63883896860"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="VerdanaReports" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{RamaDeporte}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="54" y="0" width="80" height="52" uuid="7fa78efa-c4f1-4b56-98d9-c560c39a44a1"/>
+				<imageExpression><![CDATA[$P{UrlImages}+"/"+$P{EventoId}+"_"+$F{DelegacionId}+"_1.png"]]></imageExpression>
+			</image>
+		</band>
+	</detail>
+</jasperReport>

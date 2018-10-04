@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.0.final using JasperReports Library version 6.4.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="srptAlineacion" pageWidth="255" pageHeight="283" columnWidth="255" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" isSummaryNewPage="true" uuid="fda8e0c4-6df6-4cb2-b326-00313d254e40">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SQLDeportes"/>
+	<property name="com.jaspersoft.studio.unit." value="cm"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="cm"/>
+	<template><![CDATA["Resources/Styles/style_basic.jrtx"]]></template>
+	<parameter name="CronogramaId" class="java.lang.String"/>
+	<parameter name="CompetidorId" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[select * from conj.fGetPlanillaJugadoresVolley( $P{CronogramaId} , $P{CompetidorId} )]]>
+	</queryString>
+	<field name="NumeroCamiseta" class="java.lang.Integer"/>
+	<field name="Nombre" class="java.lang.String"/>
+	<field name="Posicion" class="java.lang.String"/>
+	<field name="Pts" class="java.lang.String"/>
+	<columnHeader>
+		<band height="12">
+			<staticText>
+				<reportElement x="215" y="0" width="40" height="12" uuid="fbfb6b45-c577-4b04-8aa9-f6a7e1c76650"/>
+				<textElement textAlignment="Center">
+					<font fontName="VerdanaReports" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Pts.]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="13" splitType="Stretch">
+			<textField>
+				<reportElement key="" style="Text10" x="0" y="0" width="34" height="13" uuid="0dc9513c-0138-4da2-a015-6a63199c71ae"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{NumeroCamiseta}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Text10" x="40" y="0" width="175" height="13" uuid="f1c0b3c8-9da5-44c0-b488-19a38be830aa"/>
+				<textFieldExpression><![CDATA[$F{Nombre}+" ("+$F{Posicion}+")"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Text10" x="215" y="0" width="40" height="13" uuid="d1e8b4af-02c4-4e3c-856d-96388ff7a884"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[IF($F{Pts}=="0","",$F{Pts})]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

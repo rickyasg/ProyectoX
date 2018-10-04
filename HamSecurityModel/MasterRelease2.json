@@ -1,0 +1,840 @@
+﻿[
+  {
+    "label": "Inicio",
+    "icon": "master",
+    "routerLink": [
+      "/"
+    ],
+    "selected": false,
+    "expanded": true,
+    "items": []
+  },
+  {
+    "label": "Acreditación",
+    "icon": "palette",
+    "partialSelection": null,
+    "selected": false,
+    "expanded": true,
+    "items": [
+      {
+        "label": "Formulario de acreditación",
+        "icon": "brush",
+        "routerLink": [
+          "formulario-acreditacion/1"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Listado de inscritos",
+        "icon": "brush",
+        "routerLink": [
+          "inscripcion-evento/1"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      }
+    ]
+  },
+  {
+    "label": "Config. Usuarios",
+    "icon": "palette",
+    "partialSelection": null,
+    "selected": false,
+    "expanded": true,
+    "items": [
+      {
+        "label": "Usuarios",
+        "icon": "brush",
+        "routerLink": [
+          "userList"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      }
+    ]
+  },
+  {
+    "label": "Configuración Deporte",
+    "icon": "palette",
+    "partialSelection": null,
+    "selected": false,
+    "expanded": true,
+    "items": [
+      {
+        "label": "Creación Grupos",
+        "icon": "info",
+        "routerLink": [
+          "grupo/4"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Registro de Equipos",
+        "icon": "brush",
+        "routerLink": [
+          "nuevoEquipo/4"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Cronogramas",
+        "icon": "brush",
+        "routerLink": [
+          "cronogramas/4"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Registrar Medallero",
+        "icon": "brush",
+        "routerLink": [
+          "conjuntoMedallero/4"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Sorteo",
+        "icon": "brush",
+        "routerLink": [
+          "sorteo-edit/4"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      }
+    ]
+  },
+  {
+    "label": "Tiro con Arco",
+    "icon": "palette",
+    "partialSelection": null,
+    "selected": false,
+    "expanded": true,
+    "items": [
+      {
+        "label": "Cronograma",
+        "icon": "brush",
+        "routerLink": [
+          "cronograma_ta/4/52"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      }
+    ]
+  },
+  {
+    "label": "Ecuestre",
+    "icon": "palette",
+    "partialSelection": null,
+    "selected": false,
+    "expanded": true,
+    "items": [
+      {
+        "label": "Competición",
+        "icon": "brush",
+        "routerLink": [
+          "competicion_ecuestre/4"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      }
+    ]
+  },
+  {
+    "label": "Golf",
+    "icon": "palette",
+    "partialSelection": null,
+    "selected": false,
+    "expanded": true,
+    "items": [
+      {
+        "label": "Jornadas",
+        "icon": "brush",
+        "routerLink": [
+          "jornada-golf/4"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Categoria",
+        "icon": "brush",
+        "routerLink": [
+          "categoria-golf/4"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Competidor",
+        "icon": "brush",
+        "routerLink": [
+          "competidor-golf/4/39"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Grupos",
+        "icon": "brush",
+        "routerLink": [
+          "grupos-golf/4"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Tarjeta",
+        "icon": "brush",
+        "routerLink": [
+          "tarjeta/4"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Total Clasificatoria",
+        "icon": "brush",
+        "routerLink": [
+          "clasificatoria-golf/4/1"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Resumen de Jornadas",
+        "icon": "brush",
+        "routerLink": [
+          "resultados-finales/4"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Control Visor",
+        "icon": "brush",
+        "routerLink": [
+          "control-visor/4"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      }
+    ]
+  },
+  {
+    "label": "Deportes Conjunto",
+    "icon": "palette",
+    "partialSelection": null,
+    "selected": false,
+    "expanded": true,
+    "items": [
+      {
+        "label": "Baloncesto",
+        "icon": "brush",
+        "routerLink": [
+          "cronograma/4/3/0"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Baloncesto 3X3",
+        "icon": "brush",
+        "routerLink": [
+          "cronograma/4/23/0"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Balonmano",
+        "icon": "brush",
+        "routerLink": [
+          "cronograma/4/15/0"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Fútbol",
+        "icon": "brush",
+        "routerLink": [
+          "cronograma/4/4/0"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Fútbol Sala",
+        "icon": "brush",
+        "routerLink": [
+          "cronograma/4/5/0"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Hockey Césped",
+        "icon": "brush",
+        "routerLink": [
+          "cronograma/4/40/0"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Polo Acuático",
+        "icon": "brush",
+        "routerLink": [
+          "cronograma/4/17/0"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Rugby",
+        "icon": "brush",
+        "routerLink": [
+          "cronograma/4/24/0"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Voleibol",
+        "icon": "brush",
+        "routerLink": [
+          "cronograma/4/6/0"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Voley Playa",
+        "icon": "brush",
+        "routerLink": [
+          "cronograma/4/56/0"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      }
+    ]
+  },
+  {
+    "label": "Deportes con Pelota",
+    "icon": "palette",
+    "partialSelection": null,
+    "selected": false,
+    "expanded": true,
+    "items": [
+      {
+        "label": "Bádminton",
+        "icon": "brush",
+        "routerLink": [
+          "cronograma/4/27/1"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Pelota Vasca",
+        "icon": "brush",
+        "routerLink": [
+          "cronograma/4/46/1"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Ráquetbol",
+        "icon": "brush",
+        "routerLink": [
+          "cronograma/4/11/1"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Squash",
+        "icon": "brush",
+        "routerLink": [
+          "cronograma/4/49/1"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Tenis de Mesa",
+        "icon": "brush",
+        "routerLink": [
+          "cronograma/4/13/1"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Tenis",
+        "icon": "brush",
+        "routerLink": [
+          "cronograma/4/51/1"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      }
+    ]
+  },
+  {
+    "label": "Deportes Individual",
+    "icon": "palette",
+    "partialSelection": null,
+    "selected": false,
+    "expanded": true,
+    "items": [
+      {
+        "label": "Atletismo",
+        "icon": "brush",
+        "routerLink": [
+          "individual/4/14"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "BMX",
+        "icon": "brush",
+        "routerLink": [
+          "individual/4/33"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Bowling",
+        "icon": "brush",
+        "routerLink": [
+          "individual/4/28"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Canotaje",
+        "icon": "brush",
+        "routerLink": [
+          "individual/4/29"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Ciclismo Montaña",
+        "icon": "brush",
+        "routerLink": [
+          "individual/4/32"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Ciclismo Pista",
+        "icon": "brush",
+        "routerLink": [
+          "individual/4/30"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Ciclismo Ruta",
+        "icon": "brush",
+        "routerLink": [
+          "individual/4/31"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Clavados",
+        "icon": "brush",
+        "routerLink": [
+          "individual/4/18"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Ecuestre",
+        "icon": "brush",
+        "routerLink": [
+          "individual/4/34"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Esquí Náutico",
+        "icon": "brush",
+        "routerLink": [
+          "individual/4/37"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Gimnasia  de Trampolín",
+        "icon": "brush",
+        "routerLink": [
+          "individual/4/38"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Gimnasia  Artistica",
+        "icon": "brush",
+        "routerLink": [
+          "individual/4/8"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Gimnasia Ritmica",
+        "icon": "brush",
+        "routerLink": [
+          "individual/4/9"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Golf",
+        "icon": "brush",
+        "routerLink": [
+          "individual/4/39"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Levantamiento de Pesas",
+        "icon": "brush",
+        "routerLink": [
+          "individual/4/42"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Natacion Aguas Abiertas",
+        "icon": "brush",
+        "routerLink": [
+          "individual/4/21"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Natacion Pileta",
+        "icon": "brush",
+        "routerLink": [
+          "individual/4/19"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Natacion Artistica",
+        "icon": "brush",
+        "routerLink": [
+          "individual/4/20"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Patinaje Artístico",
+        "icon": "brush",
+        "routerLink": [
+          "individual/4/45"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Patinaje de Carreras",
+        "icon": "brush",
+        "routerLink": [
+          "individual/4/44"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Pentatlón moderno",
+        "icon": "brush",
+        "routerLink": [
+          "individual/4/47"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Remo",
+        "icon": "brush",
+        "routerLink": [
+          "individual/4/48"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Tiro con Arco",
+        "icon": "brush",
+        "routerLink": [
+          "individual/4/52"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Tiro Deportivo",
+        "icon": "brush",
+        "routerLink": [
+          "individual/4/53"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Triatlón",
+        "icon": "brush",
+        "routerLink": [
+          "individual/4/54"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Vela",
+        "icon": "brush",
+        "routerLink": [
+          "individual/4/55"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      }
+    ]
+  },
+  {
+    "label": "Deportes Contacto",
+    "icon": "palette",
+    "partialSelection": null,
+    "selected": false,
+    "expanded": true,
+    "items": [
+      {
+        "label": "Boxeo",
+        "icon": "brush",
+        "routerLink": [
+          "individual/4/26"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Esgrima",
+        "icon": "brush",
+        "routerLink": [
+          "individual/4/36"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Judo",
+        "icon": "brush",
+        "routerLink": [
+          "individual/4/22"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Karate",
+        "icon": "brush",
+        "routerLink": [
+          "individual/4/41"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Lucha",
+        "icon": "brush",
+        "routerLink": [
+          "individual/4/43"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Taekwondo",
+        "icon": "brush",
+        "routerLink": [
+          "individual/4/50"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      }
+    ]
+  },
+  {
+    "label": "Visor De Pantallas",
+    "icon": "palette",
+    "partialSelection": null,
+    "selected": false,
+    "expanded": true,
+    "items": [
+      {
+        "label": "Mostrar Control Visor",
+        "icon": "brush",
+        "routerLink": [
+          "pantalla-remote/4/4/1/0/1"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      }
+    ]
+  },
+  {
+    "label": "Reportes",
+    "icon": "palette",
+    "partialSelection": null,
+    "selected": false,
+    "expanded": true,
+    "items": [
+      {
+        "label": "Tabla de Posiciones",
+        "icon": "brush",
+        "routerLink": [
+          "tabla-posiciones/4"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Medallero General",
+        "icon": "brush",
+        "routerLink": [
+          "general/4"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Rol de Partidos",
+        "icon": "brush",
+        "routerLink": [
+          "rol-partido/4"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Rol de Encuentros",
+        "icon": "brush",
+        "routerLink": [
+          "rol-encuentro/4"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      },
+      {
+        "label": "Resumen de Jornada",
+        "icon": "brush",
+        "routerLink": [
+          "resumen-jornadas/4"
+        ],
+        "selected": false,
+        "expanded": true,
+        "items": []
+      }
+    ]
+  }
+]

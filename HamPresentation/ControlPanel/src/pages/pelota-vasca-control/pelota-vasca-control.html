@@ -1,0 +1,91 @@
+<!--
+  Generated template for the SquashControlPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons end>
+      <button ion-button outline color="primary" (click)="play()" *ngIf="!visible">
+        <ion-icon name="play" class="button-cronometro"></ion-icon>
+      </button>
+      <button ion-button outline color="danger" (click)="pause()" *ngIf="visible">
+        <ion-icon name="pause" class="button-cronometro"></ion-icon>
+      </button>
+      <button ion-button outline color="danger" (click)="gameOver()">
+        <ion-icon name="done-all" class="button-cronometro"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons start>
+      <b>PERIODO: </b>
+      <label>{{periodo_titulo}}</label>
+    </ion-buttons>
+    <ion-title>dashboard
+      <label>{{deporte}}</label>
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding>
+  <ion-grid>
+      <ion-row>
+          <ion-col col-5 class="equipo">
+            <div class="puntaje">{{puntajeA}}</div>
+            <div class="puntaje_nombre">{{Equipo_a_nombre}}</div>
+          </ion-col>
+          <ion-col col-2 class="equipo">
+            <cronometro [accion]="action" [reversa]="reversa" [setTiempo]="tiempo" (HoraCapturada)="captura($event)" [capturar]="captura_tiempo"
+              (getHora)="getTiempo($event)" (finReversa)="finReversa()" [forza]="forzar_tiempo"></cronometro>
+            <div>
+              <label class="titulo">{{mensaje}}</label>
+            </div>
+
+          </ion-col>
+
+          <ion-col col-5 class="equipo">
+            <div class="puntaje">{{puntajeB}}</div>
+            <div class="puntaje_nombre">{{Equipo_b_nombre}}</div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-12>
+            <div class="border" text-center>
+
+              <button block class="button_prueba" >
+                {{prueba_texto}}</button>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-6>
+              <div class="border">
+                <ion-col col-12 *ngFor="let item of botonesA">
+                  <boton [DatosParametros]="item" [posicion]="true" (sumartotal)="clickA($event,true)" [cronograma]="cronogramaItem"
+                  [reload]="refrescar" (restartotal)="clickA($event,false)" [solo_lectura]="solo_lectura"
+                  [marcadorSet1]="{'pA': puntajeA, 'pB': puntajeB, 'tipo': 'A'}" [deporteId]="this.deporte_data.id"></boton>
+                </ion-col>
+              </div>
+            </ion-col>
+            <ion-col col-6>
+              <div class="border">
+                <ion-col col-12 *ngFor="let item of botonesB">
+                  <boton [DatosParametros]="item" [posicion]="false" (sumartotal)="clickB($event,true)" [cronograma]="cronogramaItem"
+                  [reload]="refrescar"  (restartotal)="clickB($event,false)" [solo_lectura]="solo_lectura"
+                   [marcadorSet1]="{'pA': puntajeA, 'pB': puntajeB, 'tipo': 'B'}" [deporteId]="this.deporte_data.id"></boton>
+                </ion-col>
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-12>
+              <div class="border" text-center>
+                <ion-col col-1 *ngFor="let item of periodos" class="padding_0">
+                  <boton-periodo [DatosPeriodo]="item" [reset]="reset" (click)="reload()" (iniciarCronometro)="iniciarCronometro($event)"></boton-periodo>
+                </ion-col>
+              </div>
+            </ion-col>
+          </ion-row>
+  </ion-grid>
+</ion-content>

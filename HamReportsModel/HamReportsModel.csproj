@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0326BA77-EB6F-41CA-9A62-BD0272A72108}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HamReportsModel</RootNamespace>
+    <AssemblyName>HamReportsModel</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="itextsharp, Version=5.5.3.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalReferences\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.pdfa, Version=5.5.3.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalReferences\itextsharp.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xtra, Version=5.5.3.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalReferences\itextsharp.xtra.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.License">
+      <HintPath>..\ExternalReferences\Spire.License.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.Pdf">
+      <HintPath>..\ExternalReferences\Spire.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AcreditacionCredencial.cs" />
+    <Compile Include="AcreditacionInscritos.cs" />
+    <Compile Include="Acreditacion\CredencialPluris.cs" />
+    <Compile Include="GolfCompetidorReport.cs" />
+    <Compile Include="GolfResultadosFinalesReport.cs" />
+    <Compile Include="Golf\RptListadoGOlf.cs" />
+    <Compile Include="pdfResources\Header.cs" />
+    <Compile Include="pdfResources\HeaderFooter.cs" />
+    <Compile Include="pdfResources\ItextUtils.cs" />
+    <Compile Include="pdfResources\ParagraphFunction.cs" />
+    <Compile Include="pdfResources\TableFunction.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HamDataTransactions\HamDataTransactions.csproj">
+      <Project>{D2922F9D-45D5-4DDA-A8D9-D7DC8C2E0A4D}</Project>
+      <Name>HamDataTransactions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HamSecurityModel\HamSecurityModel.csproj">
+      <Project>{5C7B2109-D226-49A0-B2A5-0C797E266C60}</Project>
+      <Name>HamSecurityModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\american-express.png" />
+    <Content Include="images\blackbg.jpg" />
+    <Content Include="images\cara-1.jpg" />
+    <Content Include="images\cropper.jpg" />
+    <Content Include="images\Federacion.png" />
+    <Content Include="images\Fondo.png" />
+    <Content Include="images\fondoGolf.jpg" />
+    <Content Include="images\frente.jpg" />
+    <Content Include="images\gifAdidas.gif" />
+    <Content Include="images\gifNike.gif" />
+    <Content Include="images\gifSamsung.gif" />
+    <Content Include="images\gixXbox.gif" />
+    <Content Include="images\golf.jpg" />
+    <Content Include="images\golf.png" />
+    <Content Include="images\hammerLogoH.png" />
+    <Content Include="images\hammerLogoV.png" />
+    <Content Include="images\img.jpg" />
+    <Content Include="images\inbox.png" />
+    <Content Include="images\logo-country.png" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\logo2.png" />
+    <Content Include="images\logoBoa.jpg" />
+    <Content Include="images\logoBoa123.jpg" />
+    <Content Include="images\logoBoa2.gif" />
+    <Content Include="images\logoCCC.jpg" />
+    <Content Include="images\logoColor.png" />
+    <Content Include="images\logoerpDeportes.png" />
+    <Content Include="images\logo_color.png" />
+    <Content Include="images\marca.png" />
+    <Content Include="images\marcaDoble.png" />
+    <Content Include="images\marcaMinDeportes.png" />
+    <Content Include="images\mastercard.png" />
+    <Content Include="images\media.jpg" />
+    <Content Include="images\noUser.png" />
+    <Content Include="images\paypal.png" />
+    <Content Include="images\picture.jpg" />
+    <Content Include="images\prod-1.jpg" />
+    <Content Include="images\prod-2.jpg" />
+    <Content Include="images\prod-3.jpg" />
+    <Content Include="images\prod-4.jpg" />
+    <Content Include="images\prod-5.jpg" />
+    <Content Include="images\reverso-2.jpg" />
+    <Content Include="images\reverso.jpg" />
+    <Content Include="images\user.png" />
+    <Content Include="images\visa.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

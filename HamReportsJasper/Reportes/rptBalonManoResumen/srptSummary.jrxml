@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.0.final using JasperReports Library version 6.4.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="srptSummary" columnCount="6" pageWidth="612" pageHeight="792" columnWidth="102" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="fda8e0c4-6df6-4cb2-b326-00313d254e40">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SQLDeportes"/>
+	<property name="com.jaspersoft.studio.unit." value="cm"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="cm"/>
+	<template><![CDATA["Resources/Styles/style_basic.jrtx"]]></template>
+	<queryString language="SQL">
+		<![CDATA[select * from rpt.fGetSummaryParametros(15)]]>
+	</queryString>
+	<field name="Parametro" class="java.lang.String"/>
+	<field name="Abreviatura" class="java.lang.String"/>
+	<field name="Grupo" class="java.lang.Integer"/>
+	<detail>
+		<band height="10" splitType="Prevent">
+			<property name="com.jaspersoft.studio.unit.height" value="cm"/>
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+			<textField>
+				<reportElement key="" style="Text6" x="4" y="0" width="16" height="10" uuid="0dc9513c-0138-4da2-a015-6a63199c71ae"/>
+				<textElement textAlignment="Left">
+					<font size="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Abreviatura}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="" style="Text6" x="22" y="0" width="78" height="10" uuid="895a3e9f-d1b8-4b2c-8b7c-485bb6acbceb">
+					<property name="com.jaspersoft.studio.unit.width" value="cm"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font size="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Parametro}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

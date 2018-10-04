@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.0.final using JasperReports Library version 6.4.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Template_Footer" pageWidth="612" pageHeight="792" whenNoDataType="NoDataSection" columnWidth="527" leftMargin="0" rightMargin="85" topMargin="0" bottomMargin="0" whenResourceMissingType="Error" uuid="6c448989-7a6b-4c3f-b20e-f71115e2699b">
+	<property name="com.jaspersoft.studio.unit." value="cm"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SQLDeportes"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="468"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="521"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="cm"/>
+	<template><![CDATA["Resources/Styles/style_basic.jrtx"]]></template>
+	<parameter name="ReporteId" class="java.lang.String"/>
+	<parameter name="EventoId" class="java.lang.String"/>
+	<parameter name="CronogramaId" class="java.lang.String"/>
+	<parameter name="NombreSistema" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[EXEC	[rpt].[pGetHeaderFooter]
+		@CronogramaId =   $P{CronogramaId} ,
+		@EventoId = $P{EventoId} ,
+		@ReporteId =  $P{ReporteId}]]>
+	</queryString>
+	<field name="CronogramaId" class="java.lang.Integer"/>
+	<field name="Fecha" class="java.sql.Date"/>
+	<field name="HoraProgramada" class="java.sql.Time"/>
+	<field name="HoraInicio" class="java.sql.Time"/>
+	<field name="HoraFin" class="java.sql.Time"/>
+	<field name="Instalacion" class="java.lang.String"/>
+	<field name="Codigo" class="java.lang.String"/>
+	<field name="Direccion" class="java.lang.String"/>
+	<field name="Fase" class="java.lang.String"/>
+	<field name="Rama" class="java.lang.String"/>
+	<field name="Prueba" class="java.lang.String"/>
+	<field name="Deporte" class="java.lang.String"/>
+	<field name="CodigoDeporte" class="java.lang.String"/>
+	<field name="RptNombre" class="java.lang.String"/>
+	<field name="RptAbreviatura" class="java.lang.String"/>
+	<field name="EventoId" class="java.lang.Integer"/>
+	<pageFooter>
+		<band height="87" splitType="Stretch">
+			<textField>
+				<reportElement key="" style="Text6" x="454" y="32" width="73" height="13" uuid="7febcd18-d5db-41e8-8d6d-41b19bdb502d"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Pagina " + $V{PAGE_NUMBER}+ "/" + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="" style="Text6" positionType="Float" stretchType="RelativeToTallestObject" mode="Transparent" x="0" y="32" width="150" height="16" isPrintInFirstWholeBand="true" uuid="49dfd375-a035-44d8-9a20-f1181c50d4ee">
+					<property name="com.jaspersoft.studio.unit.height" value="cm"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{CodigoDeporte}+$F{RptAbreviatura}]]></textFieldExpression>
+			</textField>
+			<textField pattern="MMMM d, yyyy h:mm:ss a">
+				<reportElement key="" style="DataTimeFormat" x="200" y="33" width="184" height="16" uuid="099b34e8-b7c0-4c94-a39a-0de90c072822"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement x="482" y="0" width="44" height="33" uuid="e96a73bb-ce69-48e5-ba59-bd7a64397a05">
+					<property name="com.jaspersoft.studio.unit.margin" value="cm"/>
+				</reportElement>
+				<jr:QRCode xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" margin="0">
+					<jr:codeExpression><![CDATA["Cronograma: "+$F{CronogramaId}
++"EventoId:"+$F{EventoId}
++"Instalacion: "+$F{Instalacion}
++"Fecha: "+new java.util.Date()
++"Deporte: "+$F{Deporte}
++"Rama: "+$F{Rama}]]></jr:codeExpression>
+				</jr:QRCode>
+			</componentElement>
+			<line>
+				<reportElement x="0" y="33" width="525" height="1" uuid="11ad2c37-fb1b-4079-a2ed-7cad1b8c4d3f"/>
+				<graphicElement>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#948E8E"/>
+				</graphicElement>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement key="" style="Text9" x="200" y="0" width="184" height="14" uuid="b548c3b7-4b8c-462a-a91f-7d47c5ab2a56"/>
+				<textElement textAlignment="Center">
+					<font fontName="Verdana" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{NombreSistema}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="0" y="14" width="482" height="19" uuid="1d9ff32b-ea10-4286-86d5-82e353d08c8c">
+					<property name="com.jaspersoft.studio.unit.height" value="cm"/>
+				</reportElement>
+				<subreportParameter name="EventoId">
+					<subreportParameterExpression><![CDATA[$P{EventoId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="Fecha">
+					<subreportParameterExpression><![CDATA[$F{Fecha}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="Hora">
+					<subreportParameterExpression><![CDATA[$F{HoraProgramada}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["Resources/Template/summary.jrxml"]]></subreportExpression>
+			</subreport>
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="195" y="48" width="58" height="38" uuid="cedb633f-76b1-4b9f-8225-30cba6152680"/>
+				<imageExpression><![CDATA["Resources/deportes-1.png"]]></imageExpression>
+			</image>
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="485" y="47" width="37" height="39" uuid="2ca683a2-dfde-4fbb-91bb-132c175b82b9"/>
+				<imageExpression><![CDATA["Resources/codesur.jpg"]]></imageExpression>
+			</image>
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="0" y="48" width="90" height="39" uuid="ba55dcde-6424-4194-a7f1-f1d0b99006c5"/>
+				<imageExpression><![CDATA["Resources/hammer.png"]]></imageExpression>
+			</image>
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="256" y="49" width="50" height="38" uuid="63200810-b0b3-4cbe-a7d7-5147d3e2bc09"/>
+				<imageExpression><![CDATA["Resources/educacion-1.png"]]></imageExpression>
+			</image>
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="151" y="49" width="40" height="38" uuid="31737439-6163-4547-b602-c429f8a7ac22"/>
+				<imageExpression><![CDATA["Resources/entel-1.png"]]></imageExpression>
+			</image>
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="308" y="49" width="40" height="38" uuid="acfbf02b-b5eb-49ee-9768-12343aabb00f"/>
+				<imageExpression><![CDATA["Resources/salud-1.png"]]></imageExpression>
+			</image>
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="352" y="48" width="40" height="38" uuid="7f1844be-63e6-49dc-9ab2-4d5074f29ff1"/>
+				<imageExpression><![CDATA["Resources/ypfb-1.png"]]></imageExpression>
+			</image>
+		</band>
+	</pageFooter>
+</jasperReport>

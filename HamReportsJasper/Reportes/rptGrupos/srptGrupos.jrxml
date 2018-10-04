@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.0.final using JasperReports Library version 6.4.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="srptGrupos" language="groovy" columnCount="4" pageWidth="534" pageHeight="225" columnWidth="119" columnSpacing="14" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="498ef19b-fdee-4ac2-ba24-7e640c0e594f">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SQLDeportesLocal"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.unit." value="cm"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="cm"/>
+	<style name="Table_TH" mode="Opaque" backcolor="rgba(255, 255, 255, 0.0)">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="DataSetGrupo" uuid="2ed5451e-5ecb-4e06-9573-f2dcc1bb7387">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SQLDeportesLocal"/>
+		<parameter name="GrupoId" class="java.lang.String"/>
+		<parameter name="Grupo" class="java.lang.String"/>
+		<queryString language="SQL">
+			<![CDATA[SELECT * FROM [prog].[fGetEquiposGrupo] ( $P{GrupoId})]]>
+		</queryString>
+		<field name="EquipoId" class="java.lang.Integer"/>
+		<field name="Equipo" class="java.lang.String"/>
+		<field name="PruebaEventoId" class="java.lang.Integer"/>
+		<field name="Orden" class="java.lang.Integer"/>
+		<field name="Representacion" class="java.lang.String"/>
+		<field name="DelegacionId" class="java.lang.Integer"/>
+		<field name="GrupoId" class="java.lang.Integer"/>
+		<group name="GrupoId">
+			<groupExpression><![CDATA[$F{GrupoId}]]></groupExpression>
+		</group>
+	</subDataset>
+	<parameter name="DeporteId" class="java.lang.String"/>
+	<parameter name="RamaId" class="java.lang.String"/>
+	<parameter name="EventoId" class="java.lang.String"/>
+	<parameter name="Rama" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select tg.GrupoId, tg.Grupo 
+from prog.Grupos tg
+inner join  prog.PruebasEvento tpe on tpe.PruebaEventoId=tg.PruebaEventoId and tpe.ParametroRamaId= $P{RamaId}   and tpe.EventoId= $P{EventoId} 
+inner join prog.Pruebas tp on tp.PruebaId=tpe.PruebaId and tp.DeporteId= $P{DeporteId}]]>
+	</queryString>
+	<field name="GrupoId" class="java.lang.Integer"/>
+	<field name="Grupo" class="java.lang.String"/>
+	<pageHeader>
+		<band height="21">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+			<textField>
+				<reportElement x="0" y="0" width="534" height="21" uuid="75ade873-2fd1-4643-8864-f96880b7bdc8"/>
+				<textElement textAlignment="Center">
+					<font fontName="VerdanaReports" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Rama: "+$P{Rama}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="71" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+			<componentElement>
+				<reportElement stretchType="ContainerHeight" isPrintRepeatedValues="false" x="0" y="0" width="113" height="65" uuid="5505fe38-06b6-4b08-837a-fe73119a94b7">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+					<property name="com.jaspersoft.studio.unit.width" value="cm"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="DataSetGrupo" uuid="4c50920b-84ca-4ab8-855f-748f2ed6eaa0">
+						<datasetParameter name="Grupo">
+							<datasetParameterExpression><![CDATA[$F{Grupo}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="GrupoId">
+							<datasetParameterExpression><![CDATA[$F{GrupoId}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="113" uuid="9fcc1c52-f2af-40e2-9622-0d3066b8bd83">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+						<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
+							<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+							<box>
+								<pen lineWidth="0.0"/>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<rectangle radius="8">
+								<reportElement mode="Opaque" x="0" y="0" width="113" height="30" backcolor="#B3B3B3" uuid="ef092534-9a99-4e17-a5f5-986b810e5884"/>
+							</rectangle>
+							<textField>
+								<reportElement x="0" y="0" width="113" height="30" forecolor="#FFFFFF" uuid="fda4818e-794b-457b-8e19-f38147a7beae"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="VerdanaReports" size="10" isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA["GRUPO "+$P{Grupo}]]></textFieldExpression>
+							</textField>
+						</jr:tableHeader>
+						<jr:detailCell style="Table_TD" height="36">
+							<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+							<box>
+								<pen lineWidth="1.0" lineStyle="Dotted"/>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textField>
+								<reportElement mode="Transparent" x="0" y="0" width="113" height="20" uuid="27d1c0da-16e2-4a8e-9f0d-086893250c40"/>
+								<box>
+									<pen lineWidth="0.0"/>
+									<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="VerdanaReports" size="12" isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{Equipo}]]></textFieldExpression>
+							</textField>
+							<textField isBlankWhenNull="true">
+								<reportElement mode="Transparent" x="0" y="20" width="113" height="15" uuid="5bbf4be1-697d-4f93-b56d-ee3283315c2a"/>
+								<box>
+									<bottomPen lineWidth="1.0"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{Representacion}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<break type="Column">
+				<reportElement x="0" y="70" width="97" height="1" uuid="dbd04d78-6ed0-4b35-97d4-a65f165b6b9c">
+					<printWhenExpression><![CDATA[$V{COLUMN_NUMBER}<=3]]></printWhenExpression>
+				</reportElement>
+			</break>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,1123 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DotNetJasper</name>
+    </assembly>
+    <members>
+        <member name="T:DotNetJasper.NumericTextBox">
+            <summary>
+            A textbox that allows only numeric values.
+            </summary>
+        </member>
+        <member name="M:DotNetJasper.NumericTextBox.#ctor">
+            <summary>
+            Creates a new instance of a textbox that allows only numeric values.
+            </summary>
+        </member>
+        <member name="M:DotNetJasper.NumericTextBox.OnKeyPress(System.Windows.Forms.KeyPressEventArgs)">
+            <summary>
+            Restricts the entry of characters to digits (including hex), the negative sign,
+            the decimal point, and editing keystrokes (backspace).
+            </summary>
+            <param name="e">The event args</param>
+        </member>
+        <member name="P:DotNetJasper.NumericTextBox.HasDecimal">
+            <summary>
+            Gets either the textbox contains a decimal number
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.NumericTextBox.IntValue">
+            <summary>
+            Gets or sets the integer (long) value of this textbox
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.NumericTextBox.DecimalValue">
+            <summary>
+            Gets or sets the decimal value of this textbox
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.NumericTextBox.AllowSpace">
+            <summary>
+            Gets or sets either this textbox allows spaces
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.NumericTextBox.AllowDecimal">
+            <summary>
+            gets or sets either this textbox allows decimal values
+            </summary>
+        </member>
+        <member name="T:DotNetJasper.Controls.DateTimeJasperReportParameterControl">
+            <summary>
+            A control that can be bound to a date time jasper report parameter.
+            </summary>
+        </member>
+        <member name="F:DotNetJasper.Controls.DateTimeJasperReportParameterControl.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:DotNetJasper.Controls.DateTimeJasperReportParameterControl.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:DotNetJasper.Controls.DateTimeJasperReportParameterControl.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:DotNetJasper.Controls.DateTimeJasperReportParameterControl.#ctor(DotNetJasper.DateTimeJasperReportParameter)">
+            <summary>
+            Creates an instance of a control that is bound to a date time jasper report parameter.
+            </summary>
+            <param name="p"></param>
+        </member>
+        <member name="M:DotNetJasper.Controls.DateTimeJasperReportParameterControl.OnValueChanged(System.EventArgs)">
+            <summary>
+            This raises the ValueChanged event
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="E:DotNetJasper.Controls.DateTimeJasperReportParameterControl.ValueChanged">
+            <summary>
+            This event is raised when the value of the parameter was changed
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.Controls.DateTimeJasperReportParameterControl.MinDate">
+            <summary>
+            Gets the minimum value that this parameter can take
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.Controls.DateTimeJasperReportParameterControl.MaxDate">
+            <summary>
+            Gets the maximum value that this parameter can take.
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.Controls.DateTimeJasperReportParameterControl.Value">
+            <summary>
+            The actual value of the parameter.
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.Controls.DateTimeJasperReportParameterControl.IsValid">
+            <summary>
+            Gets either the parameter value is valid or not.
+            </summary>
+        </member>
+        <member name="T:DotNetJasper.Controls.IntJasperReportParameterControl">
+            <summary>
+            A user control that can be used to expose an integer value Jasper Report parameter in a user interface.
+            </summary>
+        </member>
+        <member name="M:DotNetJasper.Controls.IntJasperReportParameterControl.#ctor(DotNetJasper.IntJasperReportParameter)">
+            <summary>
+            Creates a control associated with a Jasper Report parameter that can take an integer value.
+            </summary>
+            <param name="p">The parameter to associate with</param>
+        </member>
+        <member name="M:DotNetJasper.Controls.IntJasperReportParameterControl.OnValueChanged(System.EventArgs)">
+            <summary>
+            This raises the ValueChanged event
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="F:DotNetJasper.Controls.IntJasperReportParameterControl.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:DotNetJasper.Controls.IntJasperReportParameterControl.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:DotNetJasper.Controls.IntJasperReportParameterControl.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.Controls.IntJasperReportParameterControl.Value">
+            <summary>
+            The integer (long) value of the parameter
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.Controls.IntJasperReportParameterControl.IsValid">
+            <summary>
+            Reports either the value is valid or not
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.Controls.IntJasperReportParameterControl.MinValue">
+            <summary>
+            Exposes the min value property of the parameter
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.Controls.IntJasperReportParameterControl.MaxValue">
+            <summary>
+            Exposes the max value property of the parameter
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.Controls.IntJasperReportParameterControl.ValidationValuesList">
+            <summary>
+            Exposes the validation values list of the parameter
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.Controls.IntJasperReportParameterControl.DenyValuesList">
+            <summary>
+            Gets either the values from the ValidationValuesList are valid values or denied values
+            </summary>
+        </member>
+        <member name="E:DotNetJasper.Controls.IntJasperReportParameterControl.ValueChanged">
+            <summary>
+            This event is raised when the value of the parameter was changed
+            </summary>
+        </member>
+        <member name="T:DotNetJasper.Controls.StringJasperReportParameterControl">
+            <summary>
+            Represents a UI Control asociated with a StringJasperReportParameter
+            </summary>
+        </member>
+        <member name="F:DotNetJasper.Controls.StringJasperReportParameterControl.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:DotNetJasper.Controls.StringJasperReportParameterControl.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:DotNetJasper.Controls.StringJasperReportParameterControl.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:DotNetJasper.Controls.StringJasperReportParameterControl.#ctor(DotNetJasper.StringJasperReportParameter)">
+            <summary>
+            A UI Control asociated with a StringJasperReportParameter
+            </summary>
+            <param name="p"></param>
+        </member>
+        <member name="M:DotNetJasper.Controls.StringJasperReportParameterControl.OnValueChanged(System.EventArgs)">
+            <summary>
+            This raises the ValueChanged event
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="E:DotNetJasper.Controls.StringJasperReportParameterControl.ValueChanged">
+            <summary>
+            This event is raised when the value of the parameter was changed
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.Controls.StringJasperReportParameterControl.Value">
+            <summary>
+            The string value of the parameter
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.Controls.StringJasperReportParameterControl.IsValid">
+            <summary>
+            Reports either the value is valid or not
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.Controls.StringJasperReportParameterControl.ValidationValuesList">
+            <summary>
+            Exposes the validation values list of the parameter
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.Controls.StringJasperReportParameterControl.DenyValuesList">
+            <summary>
+            Gets either the values from the ValidationValuesList are valid values or denied values
+            </summary>
+        </member>
+        <member name="T:DotNetJasper.Controls.MultipleChoiceJasperReportParameterControl">
+            <summary>
+               
+            </summary>
+        </member>
+        <member name="F:DotNetJasper.Controls.MultipleChoiceJasperReportParameterControl.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:DotNetJasper.Controls.MultipleChoiceJasperReportParameterControl.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:DotNetJasper.Controls.MultipleChoiceJasperReportParameterControl.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:DotNetJasper.Controls.MultipleChoiceJasperReportParameterControl.#ctor(DotNetJasper.MultipleChoiceJasperReportParameter)">
+            <summary>
+            Creates an instance of the control that is bound to a multiple choice report parameter.
+            </summary>
+            <param name="p"></param>
+        </member>
+        <member name="P:DotNetJasper.Controls.MultipleChoiceJasperReportParameterControl.IsValid">
+            <summary>
+            Gets either the parameter is valid or not. 
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.Controls.MultipleChoiceJasperReportParameterControl.MinSelections">
+            <summary>
+            Gets the minimum number of selections that must be made so this parameter can be valid.
+            </summary>
+        </member>
+        <member name="T:DotNetJasper.Forms.JasperReportParametersForm">
+            <summary>
+            A form that exposes all the parameters of a JasperReport and allows setting their values.
+            </summary>
+        </member>
+        <member name="F:DotNetJasper.Forms.JasperReportParametersForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:DotNetJasper.Forms.JasperReportParametersForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:DotNetJasper.Forms.JasperReportParametersForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:DotNetJasper.Forms.JasperReportParametersForm.RightButton">
+            <summary>
+            A reference to the bottom-right corner of the parameters form.
+            This will allow you some customization. Default text is "Run Report".
+            </summary>
+        </member>
+        <member name="F:DotNetJasper.Forms.JasperReportParametersForm.LeftButton">
+            <summary>
+            A reference to the bottom-left corner of the parameters form.
+            This will allow you some customization. Default text is "Cancel".
+            </summary>
+        </member>
+        <member name="M:DotNetJasper.Forms.JasperReportParametersForm.#ctor(DotNetJasper.JasperReport)">
+            <summary>
+            A form that exposes all the parameters of a JasperReport object in a graphic interface.
+            Any changes made in the form will afect the actual values of the parameters.
+            </summary>
+            <param name="report"></param>
+        </member>
+        <member name="T:DotNetJasper.Controls.DecimalJasperReportParameterControl">
+            <summary>
+            A user control that can be used to expose an integer value Jasper Report parameter in a user interface.
+            </summary>
+        </member>
+        <member name="M:DotNetJasper.Controls.DecimalJasperReportParameterControl.#ctor(DotNetJasper.DecimalJasperReportParameter)">
+            <summary>
+            Creates a control associated with a Jasper Report parameter that can take an integer value.
+            </summary>
+            <param name="p">The parameter to associate with</param>
+        </member>
+        <member name="M:DotNetJasper.Controls.DecimalJasperReportParameterControl.OnValidating(System.EventArgs)">
+            <summary>
+            This raises the ValueChanged event
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="F:DotNetJasper.Controls.DecimalJasperReportParameterControl.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:DotNetJasper.Controls.DecimalJasperReportParameterControl.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:DotNetJasper.Controls.DecimalJasperReportParameterControl.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.Controls.DecimalJasperReportParameterControl.Value">
+            <summary>
+            The integer (long) value of the parameter
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.Controls.DecimalJasperReportParameterControl.IsValid">
+            <summary>
+            Reports either the value is valid or not
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.Controls.DecimalJasperReportParameterControl.MinValue">
+            <summary>
+            Exposes the min value property of the parameter
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.Controls.DecimalJasperReportParameterControl.MaxValue">
+            <summary>
+            Exposes the max value property of the parameter
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.Controls.DecimalJasperReportParameterControl.ValidationValuesList">
+            <summary>
+            Exposes the validation values list of the parameter
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.Controls.DecimalJasperReportParameterControl.DenyValuesList">
+            <summary>
+            Gets either the values from the ValidationValuesList are valid values or denied values
+            </summary>
+        </member>
+        <member name="E:DotNetJasper.Controls.DecimalJasperReportParameterControl.ValueChanged">
+            <summary>
+            This event is raised when the value of the parameter was changed (the control is validating)
+            </summary>
+        </member>
+        <member name="T:DotNetJasper.JasperReportParameterType">
+            <summary>
+            An enumeration of jasper report parameter types
+            </summary>
+        </member>
+        <member name="F:DotNetJasper.JasperReportParameterType.Basic">
+            <summary>
+            Basic type. This is the base class parameter JasperReportParameter.
+            </summary>
+        </member>
+        <member name="F:DotNetJasper.JasperReportParameterType.Int">
+            <summary>
+            A Jasper Report parameter that holds an integer value (long)
+            </summary>
+        </member>
+        <member name="F:DotNetJasper.JasperReportParameterType.Decimal">
+            <summary>
+            A Jasper Report parameter that holds a decimal value
+            </summary>
+        </member>
+        <member name="F:DotNetJasper.JasperReportParameterType.String">
+            <summary>
+            A jasper report parameter that holds a string value
+            </summary>
+        </member>
+        <member name="F:DotNetJasper.JasperReportParameterType.DateTime">
+            <summary>
+            A jasper report parameter that holds a DateTime value
+            </summary>
+        </member>
+        <member name="F:DotNetJasper.JasperReportParameterType.Boolean">
+            <summary>
+            A Jasper Report Parameter that holds a Boolean value
+            </summary>
+        </member>
+        <member name="F:DotNetJasper.JasperReportParameterType.MultipleChoice">
+            <summary>
+            A multiple choice jasper report parameter
+            </summary>
+        </member>
+        <member name="T:DotNetJasper.MultipleChoiceReportParameterOption">
+            <summary>
+            An option of the multiple choice report parameter
+            </summary>
+        </member>
+        <member name="M:DotNetJasper.MultipleChoiceReportParameterOption.Equals(System.Object)">
+            <summary>
+            Compares two objects
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNetJasper.MultipleChoiceReportParameterOption.GetHashCode">
+            <summary>
+            Gets the hash code for this object.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:DotNetJasper.MultipleChoiceReportParameterOption.Value">
+            <summary>
+            The value of the option
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.MultipleChoiceReportParameterOption.Selected">
+            <summary>
+            Gets or sets either the option is selected or not
+            </summary>
+        </member>
+        <member name="T:DotNetJasper.JasperReportParameter">
+            <summary>
+            Provides an easy way to create parameters for a RunReport call.
+            </summary>
+        </member>
+        <member name="F:DotNetJasper.JasperReportParameter.UnixEpochDate">
+            <summary>
+            A date time constant representing the date 01/01/1970 (Unix epoch)
+            </summary>
+        </member>
+        <member name="M:DotNetJasper.JasperReportParameter.#ctor">
+            <summary>
+            The default contructor of a JasperReportParameter. This should be called by any class that implemets JasperReportParameter
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.JasperReportParameter.ParameterType">
+            <summary>
+            Gets the parameter type.
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.JasperReportParameter.DontPass">
+            <summary>
+            Gets or sets either this parameter will be passed in the final request or it will be ignored.
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.JasperReportParameter.Name">
+            <summary>
+            The name of the parameter.
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.JasperReportParameter.Description">
+            <summary>
+            Parameter's description.
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.JasperReportParameter.Alias">
+            <summary>
+            Gets or sets an human readable form of this parameter.
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.JasperReportParameter.Value">
+            <summary>
+            Gets the value of the parameter.
+            </summary>
+        </member>
+        <member name="T:DotNetJasper.IntJasperReportParameter">
+            <summary>
+            A Jasper Report parameter that holds an integer value (long)
+            </summary>
+        </member>
+        <member name="M:DotNetJasper.IntJasperReportParameter.#ctor">
+            <summary>
+            Creates a new instance of a jasper report parameter that can hold an integer value.
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.IntJasperReportParameter.IntValue">
+            <summary>
+            The value of the parameter
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.IntJasperReportParameter.MinValue">
+            <summary>
+            This value is used for validation.
+            You can use MinValue > MaxValue if you attempt to allow any value outside this interval
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.IntJasperReportParameter.MaxValue">
+            <summary>
+            This value is used for validation.
+            You can use MinValue > MaxValue if you attempt to allow any value outside this interval
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.IntJasperReportParameter.DenyValuesList">
+            <summary>
+            Gets or sets either the values in the Validation list are accepted or denied.
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.IntJasperReportParameter.ValidationValuesList">
+            <summary>
+            A list of elements representing the accepted or dened values that this parameter can take depending on the DenyValuesList property
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.IntJasperReportParameter.IsValid">
+            <summary>
+            Gets wheter or not the value of this parameter is valid
+            </summary>
+        </member>
+        <member name="T:DotNetJasper.DecimalJasperReportParameter">
+            <summary>
+            A Jasper Report parameter that holds a decimal value
+            </summary>
+        </member>
+        <member name="M:DotNetJasper.DecimalJasperReportParameter.#ctor">
+            <summary>
+            Creates a new instance of a jasper report parameter that can hold a decimal value.
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.DecimalJasperReportParameter.DecimalValue">
+            <summary>
+            The actual value of the parameter
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.DecimalJasperReportParameter.DenyValuesList">
+            <summary>
+            Gets or sets either the values in the Validation list are accepted or denied.
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.DecimalJasperReportParameter.ValidationValuesList">
+            <summary>
+            A list of elements representing the accepted or dened values that this parameter can take depending on the DenyValuesList property
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.DecimalJasperReportParameter.MinValue">
+            <summary>
+            This value is used for validation.
+            You can use MinValue > MaxValue if you attempt to allow any value outside this interval
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.DecimalJasperReportParameter.MaxValue">
+            <summary>
+            This value is used for validation.
+            You can use MinValue > MaxValue if you attempt to allow any value outside this interval
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.DecimalJasperReportParameter.IsValid">
+            <summary>
+            Tells whether the value of this parameter is valid or not
+            </summary>
+        </member>
+        <member name="T:DotNetJasper.StringJasperReportParameter">
+            <summary>
+            A jasper report parameter that holds a string value
+            </summary>
+        </member>
+        <member name="M:DotNetJasper.StringJasperReportParameter.#ctor">
+            <summary>
+            Creates a new instance of a jasper report parameter that can hold string values
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.StringJasperReportParameter.StringValue">
+            <summary>
+            The actual value of the prameter.
+            This is used as default value.
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.StringJasperReportParameter.DenyValuesList">
+            <summary>
+            Gets or sets whether the ValidationValuesList represents the Accepted Values or Denied Values for the parameter
+            Used for validation
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.StringJasperReportParameter.ValidationValuesList">
+            <summary>
+            A list of elements representing the accepted or dened values that this parameter can take depending on the DenyValuesList property
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.StringJasperReportParameter.IsValid">
+            <summary>
+            Tells whether the value of this parameter is valid or not
+            </summary>
+        </member>
+        <member name="T:DotNetJasper.DateTimeJasperReportParameter">
+            <summary>
+            A jasper report parameter that holds a DateTime value
+            </summary>
+        </member>
+        <member name="M:DotNetJasper.DateTimeJasperReportParameter.#ctor">
+            <summary>
+            Creates a new Jasper Report Parameter that can take a DateTime value. The value of the parameter will be set to the current date and time.
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.DateTimeJasperReportParameter.DateTimeValue">
+            <summary>
+            The default value of the parameter.
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.DateTimeJasperReportParameter.MinValue">
+            <summary>
+            The minimum value allowed for this parameter.
+            Used at validation.
+            You can specify MinValue > MaxValue if you intend to exclude this interval from the valid values.
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.DateTimeJasperReportParameter.MaxValue">
+            <summary>
+            The maximum value allowed for this parameter.
+            Used at validation.
+            You can specify MinValue > MaxValue if you intend to exclude this interval from the valid values.
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.DateTimeJasperReportParameter.ValidationValuesList">
+            <summary>
+            A list of elements representing the accepted or dened values that this parameter can take depending on the DenyValuesList property
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.DateTimeJasperReportParameter.DenyValuesList">
+            <summary>
+            Gets or sets either the values from the validation list are accepted or denied.
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.DateTimeJasperReportParameter.IsValid">
+            <summary>
+            Tells whether the value of this parameter is valid or not
+            </summary>
+        </member>
+        <member name="T:DotNetJasper.BoolJasperReportParameter">
+            <summary>
+            A Jasper Report Parameter that holds a Boolean value
+            </summary>
+        </member>
+        <member name="M:DotNetJasper.BoolJasperReportParameter.#ctor">
+            <summary>
+            Creates an instance of a jasper report parameter that can hold a boolean value
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.BoolJasperReportParameter.BoolValue">
+            <summary>
+            Gets or sets the value of the parameter.
+            </summary>
+        </member>
+        <member name="T:DotNetJasper.MultipleChoiceJasperReportParameter">
+            <summary>
+            A multiple choice jasper report parameter
+            </summary>
+        </member>
+        <member name="M:DotNetJasper.MultipleChoiceJasperReportParameter.#ctor">
+            <summary>
+            Creates an instance of a multi choice jasper report parameter.
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.MultipleChoiceJasperReportParameter.Options">
+            <summary>
+            The list of options. An option consists of a value(string) and a boolean that specifies either the option is selected or not.
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.MultipleChoiceJasperReportParameter.PossibleValues">
+            <summary>
+            Gets the list of possible values that this parameter can take
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.MultipleChoiceJasperReportParameter.SelectedValues">
+            <summary>
+            Gets or sets the list of selected values.
+            If the list contains values that are not included in the posbile values they will be ignored.
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.MultipleChoiceJasperReportParameter.MinSelections">
+            <summary>
+            Gets or sets the minimum number of selected options.
+            This will be used in the validation process.
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.MultipleChoiceJasperReportParameter.IsValid">
+            <summary>
+            Gets either the parameter is valid or not
+            </summary>
+        </member>
+        <member name="T:DotNetJasper.Controls.BoolJasperReportParameterControl">
+            <summary>
+              
+            </summary>
+        </member>
+        <member name="F:DotNetJasper.Controls.BoolJasperReportParameterControl.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:DotNetJasper.Controls.BoolJasperReportParameterControl.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:DotNetJasper.Controls.BoolJasperReportParameterControl.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:DotNetJasper.Controls.BoolJasperReportParameterControl.#ctor(DotNetJasper.BoolJasperReportParameter)">
+            <summary>
+            Creates an instance of the BoolJasperReportParameterControl asociated with the BoolJasperReportParameter specified as parameter
+            </summary>
+            <param name="p">A BoolJasperReportParameter</param>
+        </member>
+        <member name="P:DotNetJasper.Controls.BoolJasperReportParameterControl.Value">
+            <summary>
+            The actual value of the parameter
+            </summary>
+        </member>
+        <member name="M:DotNetJasper.JasperService.#ctor(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:DotNetJasper.JasperService.get(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:DotNetJasper.JasperService.getAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:DotNetJasper.JasperService.getAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DotNetJasper.JasperService.put(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:DotNetJasper.JasperService.putAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:DotNetJasper.JasperService.putAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DotNetJasper.JasperService.list(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:DotNetJasper.JasperService.listAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:DotNetJasper.JasperService.listAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DotNetJasper.JasperService.copy(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:DotNetJasper.JasperService.copyAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:DotNetJasper.JasperService.copyAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DotNetJasper.JasperService.delete(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:DotNetJasper.JasperService.deleteAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:DotNetJasper.JasperService.deleteAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DotNetJasper.JasperService.move(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:DotNetJasper.JasperService.moveAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:DotNetJasper.JasperService.moveAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DotNetJasper.JasperService.runReport(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:DotNetJasper.JasperService.runReportAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:DotNetJasper.JasperService.runReportAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DotNetJasper.JasperService.CancelAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="E:DotNetJasper.JasperService.getCompleted">
+            <remarks/>
+        </member>
+        <member name="E:DotNetJasper.JasperService.putCompleted">
+            <remarks/>
+        </member>
+        <member name="E:DotNetJasper.JasperService.listCompleted">
+            <remarks/>
+        </member>
+        <member name="E:DotNetJasper.JasperService.copyCompleted">
+            <remarks/>
+        </member>
+        <member name="E:DotNetJasper.JasperService.deleteCompleted">
+            <remarks/>
+        </member>
+        <member name="E:DotNetJasper.JasperService.moveCompleted">
+            <remarks/>
+        </member>
+        <member name="E:DotNetJasper.JasperService.runReportCompleted">
+            <remarks/>
+        </member>
+        <member name="T:DotNetJasper.getCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:DotNetJasper.getCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:DotNetJasper.getCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:DotNetJasper.putCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:DotNetJasper.putCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:DotNetJasper.putCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:DotNetJasper.listCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:DotNetJasper.listCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:DotNetJasper.listCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:DotNetJasper.copyCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:DotNetJasper.copyCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:DotNetJasper.copyCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:DotNetJasper.deleteCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:DotNetJasper.deleteCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:DotNetJasper.deleteCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:DotNetJasper.moveCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:DotNetJasper.moveCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:DotNetJasper.moveCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:DotNetJasper.runReportCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:DotNetJasper.runReportCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:DotNetJasper.runReportCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:DotNetJasper.JasperReportFormat">
+            <summary>
+            Represents the output format of a report
+            </summary>
+        </member>
+        <member name="F:DotNetJasper.JasperReportFormat.PDF">
+            <summary>
+            PDF Format
+            </summary>
+        </member>
+        <member name="F:DotNetJasper.JasperReportFormat.JRPRINT">
+            <summary>
+            Java Report Object
+            </summary>
+        </member>
+        <member name="F:DotNetJasper.JasperReportFormat.HTML">
+            <summary>
+            HTML Format.
+            </summary>
+        </member>
+        <member name="F:DotNetJasper.JasperReportFormat.XLS">
+            <summary>
+            Excel 97-2003 format
+            </summary>
+        </member>
+        <member name="F:DotNetJasper.JasperReportFormat.XML">
+            <summary>
+            XML Format. If the report contains images they will be serialized inside of the xml file.
+            </summary>
+        </member>
+        <member name="F:DotNetJasper.JasperReportFormat.CSV">
+            <summary>
+            Comma Separated Values format
+            </summary>
+        </member>
+        <member name="F:DotNetJasper.JasperReportFormat.RTF">
+            <summary>
+            Rich Text Format
+            </summary>
+        </member>
+        <member name="T:DotNetJasper.JasperFileTypes">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetJasper.JasperFileTypes.JPG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetJasper.JasperFileTypes.PNG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetJasper.JasperFileTypes.Bitmap">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetJasper.JasperFileTypes.GIF">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetJasper.JasperFileTypes.Text">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:DotNetJasper.JasperFileTypesExtensions">
+            <summary>
+            Jasper File Types Extensions class
+            </summary>
+        </member>
+        <member name="T:DotNetJasper.RunReportCompletedEventArgs">
+            <summary>
+            An event args that contains useful information.
+            </summary>
+        </member>
+        <member name="M:DotNetJasper.RunReportCompletedEventArgs.#ctor(System.String)">
+            <summary>
+            Creates a new instance of the RunReportCompleted event arguments
+            </summary>
+            <param name="ReportOutputPath">The output path of the report if operation ended succesfully</param>
+        </member>
+        <member name="P:DotNetJasper.RunReportCompletedEventArgs.OutputPath">
+            <summary>
+            The output path of the generated report
+            </summary>
+        </member>
+        <member name="T:DotNetJasper.ConfigHelper">
+            <summary>
+            This class cannot be instantiated.
+            It's properties will help you tweak some WSE settings used in JasperServer.
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.ConfigHelper.ConfigSectionHandler">
+            <summary>
+            This line MUST be placed in app.config/web.config in the "configSections" section if you plan to use the WSE config section. This property is Read Only.
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.ConfigHelper.ConfigSection">
+            <summary>
+            This represents a minimal set of WSE settings needed in JasperServer. Add this to your app.config/web.config. This property is Read Only.
+            </summary>
+        </member>
+        <member name="T:DotNetJasper.JasperServer">
+            <summary>
+            The main class that will allow you to invoke JasperServer operations.
+            </summary>
+        </member>
+        <member name="M:DotNetJasper.JasperServer.OnRunReportCompleted(DotNetJasper.RunReportCompletedEventArgs)">
+            <summary>
+            This method is used to raise the RunReportCompleted event.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:DotNetJasper.JasperServer.#ctor(System.String)">
+            <summary>
+            Creates an instance of JasperServer.
+            You should set the username and password if the server does not accept Windows Authentication
+            </summary>
+            <param name="JasperServiceUrl">The url to the JasperServer ManagementService service (generally 'http://[hostname]:[port]/jasperserver/services/repository')</param>
+        </member>
+        <member name="M:DotNetJasper.JasperServer.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Creates an instance of JasperServer.
+            </summary>
+            <param name="JasperServiceUrl">The url to the JasperServer ManagementService service (generally 'http://[hostname]:[port]/jasperserver/services/repository')</param>
+            <param name="Username">The username used to login in JasperServer</param>
+            <param name="Password">The password used to login in JasperServer</param>
+        </member>
+        <member name="M:DotNetJasper.JasperServer.RootPath(System.String)">
+            <summary>
+            Determines the root path for a specified path.
+            </summary>
+            <param name="Path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNetJasper.JasperServer.RunReport(DotNetJasper.JasperReport,DotNetJasper.JasperReportFormat,System.String,System.Int32,System.String)">
+            <summary>
+            Runs a report on the JasperServer. This method outputs the report in the specified format at the specified path.
+            </summary>
+            <param name="Report">A JasperReport instance</param>
+            <param name="Format">Output format</param>
+            <param name="OutputFilePath">Output path</param>
+            <param name="PageIndex">the page of the report</param>
+            <param name="ImagesDir">The images dir, used when output format is HTML</param>
+            <returns>The result of the operation</returns>
+        </member>
+        <member name="M:DotNetJasper.JasperServer.RunReportAsync(DotNetJasper.JasperReport,DotNetJasper.JasperReportFormat,System.String,System.AsyncCallback,System.Object,System.Int32,System.String)">
+             <summary>
+             The asyncronous version of the method RunReport.
+             </summary>
+            <param name="Report">A JasperReport instance</param>
+             <param name="Format">Output format</param>
+             <param name="OutputFilePath">Output path</param>
+             <param name="Callback">An AsyncCallback</param>
+             <param name="State">An async state object</param>
+             <param name="PageIndex">the page of the report</param>
+             <param name="ImagesDir">The images dir, used when output format is HTML</param>
+             <returns>The path of the generated report</returns>
+        </member>
+        <member name="E:DotNetJasper.JasperServer.RunReportCompleted">
+            <summary>
+            The event that is raised when the RunReport call is completed. 
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.JasperServer.Username">
+            <summary>
+            The username used to login in JasperServer
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.JasperServer.Password">
+            <summary>
+            The password used to login in JasperServer
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.JasperServer.WebReference">
+            <summary>
+            The URL address of the service
+            </summary>
+        </member>
+        <member name="T:DotNetJasper.JasperServer.RunReportCompletedEventHandler">
+            <summary>
+            A delegate for the method that will be called when the RunReport call is completed.
+            </summary>
+            <param name="sender">An object</param>
+            <param name="e">The event args object.</param>
+        </member>
+        <member name="T:DotNetJasper.JasperServer.RunReportDelegate">
+            <summary>
+            A delegate for RunReportMethod
+            </summary>
+            <param name="Report">A JasperReport instance</param>
+            <param name="Format">Output format</param>
+            <param name="OutputFilePath">Output path</param>
+            <param name="PageIndex">the page of the report</param>
+            <param name="ImagesDir">The images dir, used when output format is HTML</param>
+            <returns>The path of the generated report</returns>
+        </member>
+        <member name="T:DotNetJasper.JasperReport">
+            <summary>
+            An object that can be used as a parameter in RunReport or RunReportAsync methods of the JasperServer.
+            </summary>
+        </member>
+        <member name="M:DotNetJasper.JasperReport.#ctor">
+            <summary>
+            The default contructor of the JasperReport class.
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.JasperReport.Name">
+            <summary>
+            The name of the report. This property is optional.
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.JasperReport.Path">
+            <summary>
+            Represents the path of the report template on the server.
+            </summary>
+        </member>
+        <member name="P:DotNetJasper.JasperReport.Parameters">
+            <summary>
+            The list of parameters that will be used to generate this report.
+            </summary>
+        </member>
+    </members>
+</doc>

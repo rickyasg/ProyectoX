@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.0.final using JasperReports Library version 6.4.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="FutBalonmanoResumen" pageWidth="612" pageHeight="792" columnWidth="536" leftMargin="56" rightMargin="20" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" whenResourceMissingType="Error" uuid="d28c8008-121f-402a-a886-2a39e78dace2">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.unit." value="cm"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SQLEstable"/>
+	<property name="ireport.jasperserver.url" value="http://192.168.1.7:8080/jasperserver/"/>
+	<property name="ireport.jasperserver.user" value="jasperadmin"/>
+	<property name="ireport.jasperserver.reportUnit" value="/reports/Cochabamba2017/rptResumen15"/>
+	<property name="ireport.jasperserver.report.resource" value="/reports/Cochabamba2017/rptResumen15_files/main_jrxml"/>
+	<template><![CDATA["Resources/Styles/style_basic.jrtx"]]></template>
+	<parameter name="EventoId" class="java.lang.String">
+		<defaultValueExpression><![CDATA["1"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="ReporteId" class="java.lang.String">
+		<defaultValueExpression><![CDATA["2"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="CronogramaId" class="java.lang.String">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+		<defaultValueExpression><![CDATA["6"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="NombreSistema" class="java.lang.String">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+		<defaultValueExpression><![CDATA["Resultados provistos por Hammer"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="UrlImages" class="java.lang.String">
+		<defaultValueExpression><![CDATA["C:/HammerResources/Images/Logos"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[EXEC  [rpt].[pGetResumenConjunto] @CronogramaId =  $P{CronogramaId}]]>
+	</queryString>
+	<field name="CronogramaId" class="java.lang.Integer"/>
+	<field name="Fecha" class="java.sql.Date"/>
+	<field name="CompetidorIdA" class="java.lang.Integer"/>
+	<field name="EquipoA" class="java.lang.String"/>
+	<field name="RepresentacionA" class="java.lang.String"/>
+	<field name="MarcaA" class="java.lang.String"/>
+	<field name="EsGanadorA" class="java.lang.Integer"/>
+	<field name="CompetidorIdB" class="java.lang.Integer"/>
+	<field name="EquipoB" class="java.lang.String"/>
+	<field name="RepresentacionB" class="java.lang.String"/>
+	<field name="MarcaB" class="java.lang.String"/>
+	<field name="EsGanadorB" class="java.lang.Integer"/>
+	<field name="DeporteId" class="java.lang.Integer"/>
+	<group name="Group2"/>
+	<pageHeader>
+		<band height="73" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="cm"/>
+			<subreport isUsingCache="false" runToBottom="false">
+				<reportElement x="0" y="0" width="536" height="73" uuid="d89243a0-b81c-45f9-b49c-43b041461f48"/>
+				<subreportParameter name="EventoId">
+					<subreportParameterExpression><![CDATA[$P{EventoId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="CronogramaId">
+					<subreportParameterExpression><![CDATA[$P{CronogramaId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="ReporteId">
+					<subreportParameterExpression><![CDATA[$P{ReporteId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="UrlImages">
+					<subreportParameterExpression><![CDATA[$P{UrlImages}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["Resources/Template/Header.jrxml"]]></subreportExpression>
+			</subreport>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="82">
+			<textField>
+				<reportElement style="Title11" x="76" y="14" width="162" height="26" uuid="773efe2a-272c-48ef-9a04-9cffb2b5d94a">
+					<property name="com.jaspersoft.studio.unit.x" value="cm"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{EquipoA}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Title11" x="241" y="29" width="25" height="40" uuid="c9457647-c2fb-45c2-82a3-060c43ff28ee"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Vs.]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Text6" x="76" y="40" width="162" height="10" uuid="51d01a5c-3302-48dc-a1e2-05371d22a0a6"/>
+				<textFieldExpression><![CDATA[$F{RepresentacionA}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="Text6" x="269" y="40" width="161" height="10" uuid="f2714722-dd10-4f4a-bdeb-62e4427ad870"/>
+				<textFieldExpression><![CDATA[$F{RepresentacionB}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.###;(#,##0.###-)">
+				<reportElement key="" style="Title11" stretchType="ContainerBottom" x="138" y="50" width="100" height="25" uuid="3e7d6342-f975-480b-a0df-410f2c9b7bd0"/>
+				<textElement textAlignment="Center">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{MarcaA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Title11" x="268" y="14" width="162" height="26" uuid="f088a0b0-0951-4e58-9301-a87c804ad6f5"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{EquipoB}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,###.###;(#,###.###-)">
+				<reportElement key="" style="Title11" x="269" y="50" width="100" height="25" uuid="8b3ac6a0-07d6-425f-b4cf-563ff0903958"/>
+				<textElement textAlignment="Center">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{MarcaB}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="30">
+			<staticText>
+				<reportElement style="Text10" positionType="Float" x="200" y="0" width="100" height="14" uuid="3b5c0571-8a4f-463b-a6c0-8c8f21ae969d"/>
+				<textElement textAlignment="Center">
+					<font fontName="Verdana" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Alineaciones]]></text>
+			</staticText>
+			<subreport>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="255" y="14" width="255" height="16" uuid="23884920-c6b5-4a0d-b28b-4124e2839b64">
+					<property name="com.jaspersoft.studio.unit.width" value="cm"/>
+					<property name="com.jaspersoft.studio.unit.height" value="cm"/>
+				</reportElement>
+				<subreportParameter name="CronogramaId">
+					<subreportParameterExpression><![CDATA[$F{CronogramaId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="CompetidorId">
+					<subreportParameterExpression><![CDATA[$F{CompetidorIdB}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["Reportes/rptBalonmanoResumen/srptAlineacion.jrxml"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="14" width="255" height="16" uuid="1eeae149-9b00-488d-9345-9cd2a52d8657">
+					<property name="com.jaspersoft.studio.unit.width" value="cm"/>
+				</reportElement>
+				<subreportParameter name="CronogramaId">
+					<subreportParameterExpression><![CDATA[$F{CronogramaId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="CompetidorId">
+					<subreportParameterExpression><![CDATA[$F{CompetidorIdA}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["Reportes/rptBalonmanoResumen/srptAlineacion.jrxml"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="30">
+			<staticText>
+				<reportElement style="Text10" positionType="Float" x="200" y="0" width="100" height="14" uuid="ed651eb0-75b8-4eb8-a3ef-a3d253e50a69"/>
+				<textElement textAlignment="Center">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sustitutos]]></text>
+			</staticText>
+			<subreport>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="255" y="14" width="255" height="16" uuid="5e628ae2-30f5-4b9c-a1ee-61ffa0988abd">
+					<property name="com.jaspersoft.studio.unit.height" value="cm"/>
+				</reportElement>
+				<subreportParameter name="CronogramaId">
+					<subreportParameterExpression><![CDATA[$F{CronogramaId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="CompetidorId">
+					<subreportParameterExpression><![CDATA[$F{CompetidorIdB}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["Reportes/rptBalonmanoResumen/srptSuplentes.jrxml"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="14" width="255" height="16" uuid="e50b56da-0349-4a59-b4f1-4fa41859e3e3">
+					<property name="com.jaspersoft.studio.unit.height" value="cm"/>
+				</reportElement>
+				<subreportParameter name="CronogramaId">
+					<subreportParameterExpression><![CDATA[$F{CronogramaId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="CompetidorId">
+					<subreportParameterExpression><![CDATA[$F{CompetidorIdA}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["Reportes/rptBalonmanoResumen/srptSuplentes.jrxml"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="30">
+			<staticText>
+				<reportElement style="Text10" positionType="Float" x="200" y="0" width="100" height="14" uuid="b06a6a88-a671-4bee-bb18-cfd721be543c"/>
+				<textElement textAlignment="Center">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cuerpo Técnico]]></text>
+			</staticText>
+			<subreport>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="14" width="255" height="16" uuid="6188f548-0893-423c-ba9e-db248cc0d0df">
+					<property name="com.jaspersoft.studio.unit.height" value="cm"/>
+				</reportElement>
+				<subreportParameter name="CronogramaId">
+					<subreportParameterExpression><![CDATA[$F{CronogramaId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="CompetidorId">
+					<subreportParameterExpression><![CDATA[$F{CompetidorIdA}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["Reportes/rptBalonmanoResumen/srptAsistentes.jrxml"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="260" y="14" width="255" height="16" uuid="a7e64adf-2f9f-4264-8af6-42fda031d391">
+					<property name="com.jaspersoft.studio.unit.height" value="cm"/>
+				</reportElement>
+				<subreportParameter name="CronogramaId">
+					<subreportParameterExpression><![CDATA[$F{CronogramaId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="CompetidorId">
+					<subreportParameterExpression><![CDATA[$F{CompetidorIdB}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["Reportes/rptBalonmanoResumen/srptAsistentes.jrxml"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="30">
+			<staticText>
+				<reportElement style="Text10" positionType="Float" x="200" y="0" width="100" height="13" uuid="f6046288-be43-4369-9c06-d4d956b03f9d"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Anotaciones]]></text>
+			</staticText>
+			<subreport>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="255" y="13" width="255" height="17" uuid="3375e54e-3258-4427-a265-a2c19fb547de">
+					<property name="com.jaspersoft.studio.unit.height" value="cm"/>
+				</reportElement>
+				<subreportParameter name="CronogramaId">
+					<subreportParameterExpression><![CDATA[$F{CronogramaId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="CompetidorId">
+					<subreportParameterExpression><![CDATA[$F{CompetidorIdB}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["Reportes/rptBalonmanoResumen/srptAnotaciones.jrxml"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="13" width="255" height="17" uuid="d48d68b8-f2e8-415d-86cc-83e8b6ef9c54">
+					<property name="com.jaspersoft.studio.unit.height" value="cm"/>
+				</reportElement>
+				<subreportParameter name="CronogramaId">
+					<subreportParameterExpression><![CDATA[$F{CronogramaId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="CompetidorId">
+					<subreportParameterExpression><![CDATA[$F{CompetidorIdA}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["Reportes/rptBalonmanoResumen/srptAnotaciones.jrxml"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="30">
+			<staticText>
+				<reportElement style="Text10" positionType="Float" x="200" y="0" width="100" height="14" uuid="15806311-4979-4ede-9245-9c7af243fa42"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Amonestaciones]]></text>
+			</staticText>
+			<subreport>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="14" width="255" height="16" uuid="b4270e38-103c-44fe-81fb-38b896a700be">
+					<property name="com.jaspersoft.studio.unit.height" value="cm"/>
+				</reportElement>
+				<subreportParameter name="CronogramaId">
+					<subreportParameterExpression><![CDATA[$F{CronogramaId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="CompetidorId">
+					<subreportParameterExpression><![CDATA[$F{CompetidorIdA}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["Reportes/rptBalonmanoResumen/srptAmolestaciones.jrxml"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="255" y="14" width="255" height="16" uuid="faa33547-079e-466b-a89a-fe9b5a01a83d">
+					<property name="com.jaspersoft.studio.unit.height" value="cm"/>
+				</reportElement>
+				<subreportParameter name="CronogramaId">
+					<subreportParameterExpression><![CDATA[$F{CronogramaId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="CompetidorId">
+					<subreportParameterExpression><![CDATA[$F{CompetidorIdB}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["Reportes/rptBalonmanoResumen/srptAmolestaciones.jrxml"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="29">
+			<staticText>
+				<reportElement style="Text10" positionType="Float" x="200" y="0" width="100" height="14" uuid="45d36ae4-483a-4d30-83d8-4ad12964f5d4"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Arbitraje]]></text>
+			</staticText>
+			<subreport>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="127" y="14" width="255" height="15" uuid="08d0c437-1cf2-4588-9731-06c623efd156">
+					<property name="com.jaspersoft.studio.unit.height" value="cm"/>
+				</reportElement>
+				<subreportParameter name="CronogramaId">
+					<subreportParameterExpression><![CDATA[$F{CronogramaId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="CompetidorId">
+					<subreportParameterExpression><![CDATA[$F{CompetidorIdA}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["Reportes/rptBalonmanoResumen/srptArbitraje.jrxml"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="29">
+			<staticText>
+				<reportElement style="Text10" positionType="Float" x="200" y="0" width="100" height="14" uuid="5cd6cedf-878d-4cd8-969b-30d087650e07"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Estadísticas]]></text>
+			</staticText>
+			<subreport>
+				<reportElement style="DataTimeFormat" positionType="Float" stretchType="RelativeToTallestObject" x="40" y="14" width="399" height="15" uuid="7de275b3-cb52-4905-8d7f-ac86ace132ab">
+					<property name="com.jaspersoft.studio.unit.height" value="cm"/>
+				</reportElement>
+				<subreportParameter name="CronogramaId">
+					<subreportParameterExpression><![CDATA[$F{CronogramaId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="EquipoA">
+					<subreportParameterExpression><![CDATA[$F{EquipoA}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="EquipoB">
+					<subreportParameterExpression><![CDATA[$F{EquipoB}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["Reportes/rptBalonmanoResumen/srptEstadistico.jrxml"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="49">
+			<subreport isUsingCache="true" overflowType="NoStretch">
+				<reportElement x="0" y="0" width="536" height="49" uuid="8ba8de03-0381-4f03-a70d-60e98ca0d7ed">
+					<property name="com.jaspersoft.studio.unit.height" value="cm"/>
+				</reportElement>
+				<subreportParameter name="CronogramaId">
+					<subreportParameterExpression><![CDATA[$P{CronogramaId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="EventoId">
+					<subreportParameterExpression><![CDATA[$P{EventoId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="ReporteId">
+					<subreportParameterExpression><![CDATA[$P{ReporteId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="NombreSistema">
+					<subreportParameterExpression><![CDATA[$P{NombreSistema}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["Reportes/rptBalonmanoResumen/srptSummary.jrxml"]]></subreportExpression>
+			</subreport>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="89" splitType="Stretch">
+			<subreport isUsingCache="true" overflowType="NoStretch">
+				<reportElement x="0" y="0" width="536" height="89" uuid="8fb37dd2-b871-49b8-ad76-d3dbb40613da">
+					<property name="com.jaspersoft.studio.unit.height" value="cm"/>
+				</reportElement>
+				<subreportParameter name="CronogramaId">
+					<subreportParameterExpression><![CDATA[$P{CronogramaId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="EventoId">
+					<subreportParameterExpression><![CDATA[$P{EventoId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="ReporteId">
+					<subreportParameterExpression><![CDATA[$P{ReporteId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="NombreSistema">
+					<subreportParameterExpression><![CDATA[$P{NombreSistema}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["Resources/Template/Footer.jrxml"]]></subreportExpression>
+			</subreport>
+		</band>
+	</pageFooter>
+</jasperReport>

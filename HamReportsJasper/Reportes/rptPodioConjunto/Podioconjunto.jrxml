@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.0.final using JasperReports Library version 6.4.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="AtleResumen" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="744" leftMargin="28" rightMargin="20" topMargin="56" bottomMargin="20" whenResourceMissingType="Error" uuid="d28c8008-121f-402a-a886-2a39e78dace2">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.unit." value="cm"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SQLDeportes"/>
+	<property name="ireport.jasperserver.url" value="http://localhost:8080/jasperserver/"/>
+	<property name="ireport.jasperserver.user" value="jasperadmin"/>
+	<property name="ireport.jasperserver.reportUnit" value="/reports/erpDeportes/AtleResumen"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="cm"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="415"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="571"/>
+	<template><![CDATA["Resources/Styles/style_basic.jrtx"]]></template>
+	<subDataset name="TablaAtletismo" uuid="aa513234-9259-4261-be28-3f7a534c29bd">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SQLDeportes"/>
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<queryString>
+			<![CDATA[EXEC	  [indv].[pGetPlanillaMiniAtletismo]
+		@PruebaEventoId = 34]]>
+		</queryString>
+		<field name="Equipo" class="java.lang.String"/>
+		<field name="Representacion" class="java.lang.String"/>
+		<field name="Valor12" class="java.lang.String"/>
+		<field name="Punto12" class="java.lang.String"/>
+		<field name="Valor13" class="java.lang.String"/>
+		<field name="Punto13" class="java.lang.String"/>
+		<field name="Valor14" class="java.lang.String"/>
+		<field name="Punto14" class="java.lang.String"/>
+		<field name="Valor15" class="java.lang.String"/>
+		<field name="Punto15" class="java.lang.String"/>
+		<field name="Valor16" class="java.lang.String"/>
+		<field name="Punto16" class="java.lang.String"/>
+		<field name="Valor17" class="java.lang.String"/>
+		<field name="Punto17" class="java.lang.String"/>
+		<field name="Valor18" class="java.lang.String"/>
+		<field name="Punto18" class="java.lang.String"/>
+		<field name="Valor19" class="java.lang.String"/>
+		<field name="Punto19" class="java.lang.String"/>
+		<field name="Valor20" class="java.lang.String"/>
+		<field name="Punto20" class="java.lang.String"/>
+		<field name="Valor21" class="java.lang.String"/>
+		<field name="Punto21" class="java.lang.String"/>
+		<field name="Valor22" class="java.lang.String"/>
+		<field name="Punto22" class="java.lang.String"/>
+		<field name="Total" class="java.lang.String"/>
+		<field name="ParametroMedallaId" class="java.lang.Integer"/>
+	</subDataset>
+	<parameter name="EventoId" class="java.lang.String">
+		<defaultValueExpression><![CDATA["1"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="ReporteId" class="java.lang.String">
+		<defaultValueExpression><![CDATA["1"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="NombreSistema" class="java.lang.String">
+		<defaultValueExpression><![CDATA["Hammer"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="UrlImages" class="java.lang.String">
+		<defaultValueExpression><![CDATA["C:/HammerResources/Images/Logos"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="DeporteId" class="java.lang.String"/>
+	<parameter name="RamaId" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select * 
+from prog.Cronograma tc
+inner join prog.PruebasEvento tpe on tc.PruebaEventoId=tpe.PruebaEventoId and tpe.ParametroRamaId= $P{RamaId} 
+inner join prog.Pruebas tp on tp.PruebaId=tpe.PruebaId
+inner join prog.Deportes td on td.DeporteId=tp.DeporteId and td.DeporteId=  $P{DeporteId} 
+inner join prog.Instalaciones ti on ti.InstalacionId=tc.InstalacionId
+where tc.ParametroFaseId=6
+
+ ]]>
+	</queryString>
+	<field name="CronogramaId" class="java.lang.Integer"/>
+	<field name="Fecha" class="java.sql.Date"/>
+	<field name="HoraProgramada" class="java.sql.Time"/>
+	<field name="HoraInicio" class="java.sql.Time"/>
+	<field name="HoraFin" class="java.sql.Time"/>
+	<field name="PruebaEventoId" class="java.lang.Integer"/>
+	<field name="InstalacionId" class="java.lang.Integer"/>
+	<field name="ParametroFaseId" class="java.lang.Integer"/>
+	<field name="ParametroTipoId" class="java.lang.Integer"/>
+	<field name="Estado" class="java.lang.Integer"/>
+	<field name="EventoId" class="java.lang.Integer"/>
+	<field name="FechaModificacion" class="java.sql.Timestamp"/>
+	<field name="PruebaId" class="java.lang.Integer"/>
+	<field name="ParametroRamaId" class="java.lang.Integer"/>
+	<field name="Color" class="java.lang.String"/>
+	<field name="ParticipanteMin" class="java.lang.Integer"/>
+	<field name="ParticipanteMax" class="java.lang.Integer"/>
+	<field name="EsIndividual" class="java.lang.Boolean"/>
+	<field name="DeporteId" class="java.lang.Integer"/>
+	<field name="Prueba" class="java.lang.String"/>
+	<field name="Deporte" class="java.lang.String"/>
+	<field name="Codigo" class="java.lang.String"/>
+	<field name="Instalacion" class="java.lang.String"/>
+	<field name="Direccion" class="java.lang.String"/>
+	<field name="ParametroTipoInstalacionId" class="java.lang.Integer"/>
+	<field name="Longitud" class="java.lang.Integer"/>
+	<field name="Capacidad" class="java.lang.Integer"/>
+	<pageHeader>
+		<band height="73" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="cm"/>
+			<subreport isUsingCache="false" runToBottom="false">
+				<reportElement x="2" y="0" width="739" height="73" uuid="d89243a0-b81c-45f9-b49c-43b041461f48"/>
+				<subreportParameter name="EventoId">
+					<subreportParameterExpression><![CDATA[$P{EventoId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="CronogramaId">
+					<subreportParameterExpression><![CDATA[$F{CronogramaId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="ReporteId">
+					<subreportParameterExpression><![CDATA[$P{ReporteId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="UrlImages">
+					<subreportParameterExpression><![CDATA[$P{UrlImages}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["Resources/Template/Header_H.jrxml"]]></subreportExpression>
+			</subreport>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="59">
+			<subreport>
+				<reportElement x="149" y="4" width="483" height="51" uuid="a643da17-4b5c-4c54-8e19-b65136870e59"/>
+				<subreportParameter name="DeporteId">
+					<subreportParameterExpression><![CDATA["4"]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="EventoId">
+					<subreportParameterExpression><![CDATA["1"]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="ParametroRamaId">
+					<subreportParameterExpression><![CDATA["1"]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PruebaId">
+					<subreportParameterExpression><![CDATA["1"]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="UrlImages">
+					<subreportParameterExpression><![CDATA[$P{UrlImages}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["Reportes/rptPodioConjunto/srptPodio.jrxml"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="76"/>
+	</detail>
+	<pageFooter>
+		<band height="89" splitType="Stretch">
+			<subreport isUsingCache="true" overflowType="NoStretch">
+				<reportElement x="0" y="0" width="739" height="89" uuid="8fb37dd2-b871-49b8-ad76-d3dbb40613da">
+					<property name="com.jaspersoft.studio.unit.height" value="cm"/>
+				</reportElement>
+				<subreportParameter name="CronogramaId">
+					<subreportParameterExpression><![CDATA[$F{CronogramaId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="EventoId">
+					<subreportParameterExpression><![CDATA[$P{EventoId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="ReporteId">
+					<subreportParameterExpression><![CDATA[$P{ReporteId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="NombreSistema">
+					<subreportParameterExpression><![CDATA[$P{NombreSistema}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["Resources/Template/Footer_H.jrxml"]]></subreportExpression>
+			</subreport>
+		</band>
+	</pageFooter>
+</jasperReport>
